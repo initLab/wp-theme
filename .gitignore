@@ -1,0 +1,5 @@
+.DS_Store
+
+css/*
+!css/.gitignore
+.sass-cache

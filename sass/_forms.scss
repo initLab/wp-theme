@@ -1,0 +1,33 @@
+/* --- Forms --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+$radiusBorderInput: 5px;
+$radiusBorderTextarea: $radiusBorderInput;
+
+$boxshadowInput: #444 0 0 0 5px inset;
+$boxshadowTextarea: $boxshadowInput;
+
+form {
+
+	input, textarea {
+		display: block; 
+
+	}
+
+	input {
+		@include border-radius($radiusBorderInput);
+		@include box-shadow($boxshadowInput);
+	}
+
+	textarea {
+		@include border-radius($radiusBorderTextarea);
+		@include box-shadow($boxshadowTextarea);
+	}
+
+	label {
+		display: block; 
+	}
+
+	select {
+		@include normaliseSelect;
+	}
+}

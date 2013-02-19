@@ -1,0 +1,67 @@
+.entry {
+
+	img { display: none; }
+}
+
+.gallery {
+	
+	li {
+		
+		a {
+			
+			img {
+
+			}
+		}
+	}
+}
+
+.twitter {
+	overflow: hidden; 
+	padding: 0 5px; 
+
+	.content {
+		overflow: hidden; 
+		padding-bottom: 20px; 
+	}
+
+	ul { padding: 0; }
+
+	li {
+		display: block; width: 33%; float: left; 
+		
+		.tweet_user { display: block; float: left; }
+		.tweet_user:before { content: '@'; }
+		.tweet_user:after { content: ', '; }
+		.tweet_time { display: block; float: left; padding-left: 5px; }
+		.tweet_avatar { display: block; float: left; margin: 9px 0.4em 0 0.1em; clear: left; }
+		.tweet_text { 
+			display: block;
+			padding: 0 1em 0 4.2em; 
+			margin: 5px; 
+			
+		}
+	}
+	
+	#gatekeeper {
+		li .tweet_text { padding-left: 0; } 
+	}
+
+
+}
+
+#flickr {
+	padding: 0; 
+	li { list-style: outside none; display: block; padding: 10px; float: left;   }
+}
+
+#map_address {
+	width: 100%; 
+	height: 200px; 
+	border: 2px solid #FFF;
+
+	@include box-shadow(#666 0 0 4px);
+}
+
+
+
