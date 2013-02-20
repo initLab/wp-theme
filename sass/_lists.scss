@@ -14,6 +14,30 @@
 	& > footer {
 
 	}
+
+	&.faq {
+		padding-top: 0; padding-bottom: 0; border: none !important;
+		
+		& > header { cursor: pointer; }
+		& > header h3::before { 
+			display: block;
+			float: left; 
+			margin-top: -2px; 
+			margin-right: 0.4em; 
+			content: "\BB"; 
+			
+			@include transform-style(preserve-3d);     
+			@include transform(rotate(0deg));
+		}
+		& > .cnt { display: none; }
+
+		&.active { padding-bottom: 2em; }
+		&.active > .cnt { display: block; }
+		&.active > header h3::before {
+			margin: 0 0.48em 0 -2px; 
+			@include transform(rotate(-90deg));
+		}
+	}
 }
 
 .single {
@@ -28,3 +52,5 @@
 		&:first-child { border-top: none; }
 	}
 }
+
+.post-type-archive-faq #main { padding: 1.6em 0 1em 0; }
