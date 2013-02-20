@@ -70,6 +70,35 @@
 			)
 		);
 
+		register_post_type( 'FAQ',
+			array(
+				'labels' => array(
+					'name' => __( 'FAQ' ),
+					'singular_name' => __( 'Question' ),
+					'add_new' => __( 'Add new' ),
+					'all_items' => __( 'All Questions' ),
+					'add_new_item' => __( 'Add new' ),
+					'edit_item' => __( 'Edit' ),
+					'new_item' => __( 'New' ),
+					'view_item' => __( 'View' ),
+					'search_items' => __( 'Search Questions' ),
+					'not_found' => __( 'No Questions found' ),
+					'not_found_in_trash' => __( 'No Questions found in Trash' ),
+					'menu_name' => __( 'FAQ' )
+				),
+				'menu_position' => 5,
+				'public' => true,
+				'publicly_queryable' => true,
+				'query_var' => 'news',
+				'has_archive' => true,
+				'rewrite' => array('slug' => 'faq'),
+				'supports' => array(
+					'title',
+					'editor',
+				)
+			)
+		);
+
 		register_post_type( 'courses',
 			array(
 				'labels' => array(
@@ -114,7 +143,7 @@
 		global $wp;
 		global $wp_query;
 
-		$cpts = array( 'events', 'news', 'courses', 'posts', 'page' );
+		$cpts = array( 'events', 'news', 'courses', 'posts', 'page', 'faq' );
 
 		foreach($cpts as $type)
 		{
