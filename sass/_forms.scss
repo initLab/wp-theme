@@ -1,33 +1,17 @@
 /* --- Forms --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-$radiusBorderInput: 5px;
-$radiusBorderTextarea: $radiusBorderInput;
+form { 
+	overflow: hidden; padding-top: 1em; 
+	
+	ul, li { padding: 0;  margin: 0; }
+	li { list-style: none outside; }
 
-$boxshadowInput: #444 0 0 0 5px inset;
-$boxshadowTextarea: $boxshadowInput;
-
-form {
-
-	input, textarea {
-		display: block; 
-
-	}
-
-	input {
-		@include border-radius($radiusBorderInput);
-		@include box-shadow($boxshadowInput);
-	}
-
-	textarea {
-		@include border-radius($radiusBorderTextarea);
-		@include box-shadow($boxshadowTextarea);
-	}
-
-	label {
-		display: block; 
-	}
-
-	select {
-		@include normaliseSelect;
-	}
+	h2 { font-size: 2em; font-weight: normal;  }
 }
+
+.gsection { width: auto !important; float: none !important; overflow: hidden; clear: both;  }
+
+#gform_1 {
+	li.gfield { width: 45%; margin-right: 4%; float: left; }
+}
+

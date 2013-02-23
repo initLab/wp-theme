@@ -1,0 +1,191 @@
+$colorBgrdNormal: #936;
+$colorBgrdSecondary: #666;
+$colorBgrd: $colorBgrdNormal;
+
+$radiusBorder: 3px;
+
+$paddingDefault: 2em;
+$paddingMedium: 1.2*$paddingDefault;
+$paddingBig: 1.8*$paddingDefault;
+$paddingHuge: 2*$paddingDefault;
+
+$iconSize: 1.7em;
+$circleMenuSize: 4em;
+
+.button {
+	display: block; 
+	float: left; 
+	margin: 0 0.5em 0.5em 0; 
+	padding: 0 $paddingDefault; 
+	text-align: center;
+	color: #EEE;
+	background-color: $colorBgrdNormal;
+	cursor: pointer;
+	position: relative; 
+	font-size: 0.9em; 
+	line-height: 1em; 
+
+	@include single-transition(all, 0.05s, linear);
+	@include text-shadow(#000 0 0 2px);
+	@include border-radius($radiusBorder);
+	@include box-shadow(0 1px 2px rgba(0,0,0,.4), inset 0 0 0 1px rgba(0,0,0,.3), inset 0 0 0 2px rgba(255,255,255,.3));
+
+	@include background-image(linear-gradient(bottom, adjust-lightness($colorBgrd, -10), adjust-lightness($colorBgrd, 10)));
+
+	&:hover, &.hover {
+		@include background-image(linear-gradient(bottom, adjust-lightness($colorBgrd, -5), adjust-lightness($colorBgrd, 20)));
+	}
+
+	&:active, &.active {
+		@include box-shadow(0 0 1px rgba(0,0,0,.5), inset 0 0 0 1px rgba(0,0,0,.3), inset 0 0 0 2px rgba(155,155,155,.3), inset 0 0 10px 2px rgba(0,0,0,.5));
+		@include background-image(linear-gradient(bottom, adjust-lightness($colorBgrd, -5), adjust-lightness($colorBgrd, 10)));
+	}
+	
+	&.small {
+		font-size: 0.8em; 
+		padding: 0 1em 0 0;
+		line-height: 1.8em; 
+
+		&[class*='icon-'] { }
+	}
+	
+	&.medium {
+		font-size: 1em; 
+		padding: 0 $paddingMedium;
+		line-height: 2.4em; 
+
+		&[class*='icon-'] { }
+	}
+
+	&.big {
+		padding: 0 $paddingBig; 
+		line-height: 2.9em; 
+
+		&[class*='icon-'] { padding-left: $paddingBig+1.1em; }
+	}
+	
+	&.huge {
+		padding: 0 $paddingHuge; 
+		font-size: 1.2em; 
+		line-height: 3.0em; 
+
+		&[class*='icon-'] { padding-left: $paddingHuge+1; }
+	}
+
+	&[class*='icon-'] {
+		text-align: left; 
+		padding-left: $paddingDefault+1;
+	
+		&:before {
+			font-size: $iconSize;
+			font-family: "Pictos";
+			width: 1em; height: 100%; 
+			position: absolute; top: 0; left: 0.42em;
+			line-height: 1em; 
+		}
+	}
+
+	&.circle {
+		padding: 0; 
+		width: 3em; height: 3em; 
+		position: relative; 
+		line-height: 3em; 
+		text-indent: -1920px; 
+		
+		@include text-shadow(none);
+		@include border-radius(50%);
+
+		&:before {
+			font-family: "Pictos";
+			font-size: $iconSize;
+			width: 100%; height: 100%; 
+			text-align:center;
+			position: absolute; top: 0; left: 0;
+			text-indent: 0; 
+		}
+
+		&.icon-share {
+			@include transform-style(preserve-3d);     
+			@include transform(rotate(45deg));
+
+			.animated & {
+				@include transform(rotate(0deg));
+			}
+		}
+	}
+
+	&.icon-share:before		{ content: '*'; }
+	&.icon-key:before		{ content: 'K'; }
+	&.icon-tags:before		{ content: 'z'; }
+	&.icon-settings:before	{ content: 'y'; }
+	&.icon-gallery:before	{ content: 'P'; }
+	&.icon-mail:before		{ content: 'M'; }
+	&.icon-lense:before		{ content: 'L'; }
+	&.icon-music:before		{ content: 'm'; }
+	&.icon-check:before		{ content: '3'; }
+	&.icon-cloud:before		{ content: 'C'; }
+	&.icon-rss:before		{ content: 'f'; }
+	&.icon-warning:before	{ content: '!'; }
+	&.icon-anchor:before	{ content: 'a'; }
+	&.icon-box:before		{ content: 'b'; }
+	&.icon-piechart:before	{ content: 'Z'; }
+	&.icon-web:before		{ content: 'G'; }
+	&.icon-twitter:before	{ content: 'B'; }
+	&.icon-fan:before		{ content: 'S'; }
+	&.icon-pin:before		{ content: '@'; }
+	&.icon-list:before		{ content: 'l'; }
+}
+
+.sharebutton {
+	width: $circleMenuSize; 
+	height: $circleMenuSize;  
+	position: relative;
+
+	.button.circle {
+		width: $circleMenuSize !important; 
+		height: $circleMenuSize !important;
+		line-height: $circleMenuSize; 
+
+		&:before {
+			font-size: $circleMenuSize*0.6; 
+		}
+	}
+
+	& > a.button.circle {
+		position: absolute; 
+		top: 3px; left: 3px;
+	}
+
+	ul {
+		width: $circleMenuSize; height: $circleMenuSize; 
+		position: absolute; 
+		left: 3px; top: 3px;
+		margin: 0;
+		padding: 0 0 0 $circleMenuSize; 
+	}
+
+	li {
+		display: block; 
+		width: $circleMenuSize; height: $circleMenuSize; 
+		position: absolute; left: 0; top: 0;
+
+        @include transform-style(preserve-3d);     
+		@include transform(scale(0.1, 0.1));
+	}
+	
+	&.animated {
+		li {
+			@include transform(scale(1, 1));
+		}
+	}
+}
+
+@for $i from 1 through 4 {
+	li:nth-child(#{$i}) { @include single-transition(all, 0.2s, linear, #{$i*0.05}s); }
+	.animated { 
+		li:nth-child(#{$i}) { 
+			left: $circleMenuSize*$i; 
+		} 
+	}
+}
+

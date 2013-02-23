@@ -1,0 +1,166 @@
+$radiusBorder: 5px;
+
+$colorBgrd: #F9F9F9;
+$colorBorderActive: #369;
+
+$checkboxSize: 1.3em;
+
+form {
+
+	input, label {	
+		display: block; 
+	}
+
+	input, textarea, select {
+		width: 100%;
+		outline: none;
+		border: 1px solid #AAA;
+		padding: 0.3em 0.5em; 
+		margin-bottom: 1em; 
+		font-size: 0.9em; 
+		box-sizing: border-box;
+		color: #666; 
+
+		@include border-radius($radiusBorder);
+		@include background-image(linear-gradient(bottom, adjust-lightness($colorBgrd, 10), adjust-lightness($colorBgrd, -10)));
+		@include box-shadow(inset 0 0 0 1px rgba(255, 255, 255,1));
+		&:active, &:focus {
+			color: #444; 
+
+			@include background-image(linear-gradient(bottom, adjust-lightness($colorBgrd, 20), adjust-lightness($colorBgrd, -5)));
+		}
+	}
+
+	select {
+		position: relative; 
+		@include appearance(none);
+		
+		&:after {
+			width: 1em; height: 1em; 
+			background: #F00; 
+			position: absolute; 
+			top: 0; right: 0;
+			content: '2';
+			color: #000; 
+		}
+	}
+
+	textarea {
+		width: 100%; 
+		min-height: 9em;
+	}
+
+	label {
+		font-weight: bold; 
+	}
+
+	input[type=submit] {
+		@extend .button.medium;
+		line-height: 1em;
+		border: none;
+		width: auto; 
+		float: left; 
+		padding-top: 0.8em; 
+		padding-bottom: 0.8em; 
+		&:active, &:focus {
+			color: #FFF; 
+		}
+
+	}
+	
+	fieldset {
+		border: 1px solid #AAA;
+		padding: 0 2em 1.5em 2em; 
+		margin-bottom: 1em; 
+
+		@include border-radius($radiusBorder);
+
+		legend { 
+			margin: 0 0 0 -1em;  
+			padding: 0 1em; 
+			font-weight: bold; 
+		}
+
+		& > label {
+			margin-top: 1em;
+		}
+
+		*:last-child {
+			margin-bottom: 2em; 
+		}
+	}
+
+	input[type=checkbox], input[type=radio] {
+		display: inline-block;
+		position: relative;
+		top: 0.3em;
+		width: auto; 
+		background-color: #fafafa;
+		border: 1px solid #cacece;
+		padding: 9px;
+		margin: 0; 
+
+		@include appearance(none);
+		@include box-shadow(0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05));
+		
+		& + label {
+			font-weight: normal; 
+			display: inline-block;
+		}
+	}
+
+	input[type=checkbox] {
+		border-radius: 3px;
+
+		&:active, &:checked:active {
+			@include box-shadow(0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1));
+		}
+
+		&:checked {
+			background-color: #e9ecee;
+			border: 1px solid #adb8c0;
+			color: #99a1a7;
+			@include box-shadow(0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1));
+
+			&:after {
+				content: '\2714';
+				font-size: 14px;
+				position: absolute;
+				top: 0px;
+				left: 3px;
+				color: #333;
+			}
+		}
+	}
+
+	/* RADIO */
+
+	input[type=radio] {
+		border-radius: 50px;
+
+		&:checked {
+			background-color: #e9ecee;
+			color: #99a1a7;
+			border: 1px solid #adb8c0;
+			@include box-shadow(0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1), inset 0px 0px 10px rgba(0,0,0,0.1));
+
+			&:after {
+				content: ' ';
+				width: 12px;
+				height: 12px;
+				border-radius: 50px;
+				position: absolute;
+				top: 3px;
+				background: #99a1a7;
+				box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
+				text-shadow: 0px;
+				left: 3px;
+				font-size: 32px;
+			}
+		}
+	
+		&:active, &:checked:active {
+			@include box-shadow(0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1));
+		}
+	}
+}
