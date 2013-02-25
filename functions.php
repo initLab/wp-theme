@@ -12,16 +12,12 @@
     }
 
     // Includes
-    include 'lib/adminTweaks.php';
-    include 'lib/rteTweaks.php';
-    include 'lib/rteShortCodes.php';
+	include 'lib/adminTweaks.php';
+	include 'lib/rteTweaks.php';
+	include 'lib/rteShortCodes.php';
     include 'lib/customwidgets.php';
     include 'lib/createCustomPostType.php';
     include 'breadcrumbs.php';
-
-	//global $wp_query;
-	//$cur_post = $wp_query->get_queried_object();
-	//$cur_post_meta = get_post_meta($cur_post->ID, 'sidebarless');
 
     add_filter( 'use_default_gallery_style', '__return_false' ); //Remove Gallery Inline Styling
 
@@ -62,6 +58,30 @@
     register_nav_menu( 'sidebar', 'Sidebar');
     register_nav_menu( 'sitemap', 'Sitemap');
     register_nav_menu( 'footer', 'Footer');
+
+//change author/username base to users/userID
+function change_author_permalinks() {
+  global $wp_rewrite;
+   // Change the value of the author permalink base to whatever you want here
+   $wp_rewrite->author_base = 'users';
+  $wp_rewrite->flush_rules();
+}
+add_action('init','change_author_permalinks');
+
+function users_query_vars($vars) {
+    // add lid to the valid list of variables
+    $new_vars = array('users');
+    $vars = $new_vars + $vars;
+    return $vars;
+}
+add_filter('query_vars', 'users_query_vars');
+
+function user_rewrite_rules( $wp_rewrite ) {
+  $newrules = array();
+  $new_rules['users/(\d*)$'] = 'index.php?author=$matches[1]';
+  $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+}
+add_filter('generate_rewrite_rules','user_rewrite_rules');
 
 
 ?>
