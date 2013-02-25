@@ -3,7 +3,7 @@ body { -webkit-font-smoothing: inherit; }
 a { text-decoration: none; } 
 
 body, form, input, select, option, button, textarea,
-table, td, th { font: 100%/1.4em "Lucida Grande", Lucida, Georgia, serif; }
+table, td, th { font: 14px/1.4em "Lucida Grande", Lucida, Georgia, serif; }
 
 h1, h2, h3, h4, h5, h6 { font: normal 1em/1.3em "Lucida Grande", Georgia, serif; margin: 0; }
 
@@ -40,4 +40,6 @@ blockquote {
 
 dl dt { padding-bottom: 0.4em; }
 dl dd { padding: 0 0 0.4em 0.908em; }
+
+.rte p:last-child { padding-bottom: 0; }
 

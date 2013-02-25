@@ -1,6 +1,6 @@
 /* Variables */
-$widthContainer: 80%;
-$widthMinContainer: 960px;
+$widthContainer: 980px;
+$widthMinContainer: 980px;
 
 $colorBgrdBody: #F1F1F1;
 
@@ -18,7 +18,7 @@ $colorBorderSecondary: #FFF;
 @import "compass/css3";
 
 /* Custom imports */
-@import "nuveze/nuveze";
+@import "nuveze/_nuveze";
 @import "_mixins";
 @import "_typography";
 @import "_navigation";
@@ -42,116 +42,95 @@ a { @include hover-link; @include link-colors($colorLinkNormal, $colorLinkHover,
 #container {
 	width: $widthContainer;
 	min-width: $widthMinContainer;
-	margin: 0 auto; 
-	padding-top: 3em; 
-	position: relative; 
-	color: #333; 
+	margin: 0 auto;
+	position: relative;
+	color: #333;
+}
 
-	& > header {
-		overflow: hidden; 
-		padding-left: 3em; 
-		border-top: 2px solid $colorBorderMain; 
-		border-bottom: 2px solid $colorBorderSecondary; 
+header#top {
+	overflow: hidden;
+	border-bottom: 2px solid $colorBorderSecondary;
 
-		h1 { 
-			float: left; 
-			padding: 0.2em 0; 
-			font-size: 7em;
+	hgroup { 
+		display: block; padding: 2em 0; text-align: center;  overflow: hidden; 
+		border-bottom: 2px solid $colorBorderSecondary;
 
-			a { 
-				display: block; 
-				color: #333;
-				@include text-shadow(#EEE -2px -2px 0px, #999 -4px -4px 0px);
-				
-				&:hover { 
-					@include text-shadow(#EEE -1px -1px 0px, #999 -2px -2px 0px);
-					text-decoration: none; 
-				}
-			}
+		@include text-shadow(#EEE 2px 2px 0px, #999 4px 4px 0px);
+
+		a { 
+			color: #333;
+
+			&:hover { text-decoration: none; }
 		}
-	
+		h1, h2 { display: inline; clear: none; padding: 0;   }
+		h1 { font-size: 6em; font-weight: normal; }
+		h2 { font-size: 3em; font-weight: normal; }
 	}
 
-	& > footer { 
-		padding: 2.5em 0 0 0; 
-		overflow: hidden; 
-		border-top: 2px solid $colorBorderMain; 
-		border-bottom: 2px solid $colorBorderSecondary; 
-
-		section.mod {
-			width: 33.33%; 
-			float: left; 
-			overflow: hidden; 
-		}
-
-		#menu-sitemap {
-			li {
-				padding: 0; 
-
-				ul {
-					padding: 0 0 0 2em; 
-				}
-			}
-		}
-	}
-
-	& > #main { 
+	.menu-main-container {
+		overflow: hidden; clear: both;
 		border-top: 2px solid $colorBorderMain;
 	}
+}
 
-	& > #copyright {
-		border-top: 2px solid $colorBorderMain;
-		padding: 1em 1em; 
-		color: #666;
-		overflow: hidden; 
-		font-size: 0.8em;
-		line-height: 1.3em; 
+footer#bottom { 
+	padding: 2em 3em; overflow: hidden; font-size: 0.9em; 
+	border-top: 2px solid $colorBorderMain; 
+	border-bottom: 2px solid $colorBorderSecondary; 
 
-		p { width: 50%; padding: 0; } 
-		p:first-child { float: right; text-align: right;  }
-		p:last-child { float: left; }
-
-		a { color: #333; }
+	section.mod {
+		width: 33.33%; float: left; overflow: hidden; 
+		
+		.cnt { padding-right: 2em; overflow: hidden; }
 	}
+
+	#menu-sitemap {
+		li {
+			padding: 0; 
+
+			ul {
+				padding: 0 0 0 2em; 
+				margin-bottom: 0; 
+			}
+		}
+	}
+}
+
+#main { 
+	overflow: hidden; 
+	border-top: 2px solid $colorBorderMain;
+
+	.archive & { padding: 2em 3em; }
+}
+
+#copyright {
+	border-top: 2px solid $colorBorderMain;
+	padding: 1em 1em; 
+	color: #666;
+	overflow: hidden; 
+	font-size: 0.8em;
+	line-height: 1.3em; 
+
+	p { width: 50%; padding: 0; } 
+	p:first-child { float: right; text-align: right;  }
+	p:last-child { float: left; }
+
+	a { color: #333; }
 }
 
 .home {
 
 	.panel {
-		width: 50%; 
-		float: left; 
-		
-		.content {
-			padding-right: 3em; 
-		}
-
-		&:last-child .content { padding-right: 0.5em; }
-
-		&#calendar {
-			float: none;
-			width: auto;
-
-			font-size: 0.8em; 
-		}
+		width: 50%; float: left; padding: 1em 2em;
 	}
 
 	.row {
-		overflow: hidden; 
-		padding: 2em 0 0 0.5em; 
+		overflow: hidden; padding: 1.5em 0; 
 
-		&.line1 {
-			border-bottom: 2px solid $colorBorderSecondary;
-		}
+		border-top: 2px solid $colorBorderMain;
+		border-bottom: 2px solid $colorBorderSecondary;
 
-		&.line2 {
-			border-top: 2px solid $colorBorderMain;
-			border-bottom: 2px solid $colorBorderSecondary;
-		}
-
-		&.line3 {
-			border-top: 2px solid $colorBorderMain;
-			border-bottom: 2px solid $colorBorderSecondary;
-		}
+		&:first-child { border-top: 0; }
 	}
 
 }
