@@ -151,7 +151,7 @@
 			{
 				if (have_posts())
 				{
-					include(TEMPLATEPATH . '/cpt.php');
+					include(TEMPLATEPATH . '/'.$type.'-list.php');
 					die();
 				}
 				else
@@ -161,5 +161,5 @@
 			}
 		}
 	}
-	add_action("template_redirect", 'customPostTypeRedirects');
+	//add_action("template_redirect", 'customPostTypeRedirects');
 ?>
