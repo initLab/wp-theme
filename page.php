@@ -1,15 +1,7 @@
-<?php
-	get_header();
+<?php get_header(); ?>
 
-		if (have_posts())
-		{
-			while (have_posts())
-			{
-				the_post();
+	<?php if (have_posts()) { while (have_posts()) { the_post(); ?>
+		<?php include 'loop/default.php'; ?>
+	<?php } } ?>
 
-				include 'loop/single.php';
-			}
-		}
-
-	get_footer();
-?>
+<?php get_footer(); ?>

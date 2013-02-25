@@ -1,24 +1,17 @@
 .entry {
-
-	img { display: none; }
+	img { }
 }
 
 .gallery {
-	
 	li {
-		
 		a {
-			
-			img {
-
-			}
+			img { }
 		}
 	}
 }
 
 .messages {
-	overflow: hidden; 
-	padding: 0 5px; 
+	overflow: hidden; padding: 0 5px; 
 
 	.content {
 		overflow: hidden; 
@@ -46,8 +39,6 @@
 	#gatekeeper {
 		li .tweet_text { padding-left: 0; } 
 	}
-
-
 }
 
 #flickr {
@@ -63,5 +54,16 @@
 	@include box-shadow(#666 0 0 4px);
 }
 
+#searchform {
+	border-bottom: 2px solid $colorBorderMain;
 
+	& > div {
+		padding: 1em 3em;
+		overflow: hidden; 
+		border-bottom: 2px solid $colorBorderSecondary;
+	}
+	
+	#s { width: 60%; font-size: 1.2em;  float: left; margin-right: 0.5em;  }
+	#searchsubmit { @extend .button; float: left; padding: 0.55em 2.2em 0.65em 2.2em; }
+}
 

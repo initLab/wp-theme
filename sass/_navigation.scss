@@ -39,3 +39,23 @@ header .menu {
 	/*@include background-image(linear-gradient(rgb(224, 224, 224), #EEE));*/
 }
 
+#header-search {
+	width: 140px; position: absolute; bottom: 3px; right: 1em; padding: 0; margin: 0; 
+	
+	input { margin: 0; padding: 3px 2px 0 2px; margin-right: 0.5em; float: right; } 
+	
+	label { float: right; padding: 5px 0 0 0; }
+
+	#header-s { 
+		width: 0; color: #EEE; border: solid #EEE; border-width: 0 0 1px 0; background: none; 
+		
+		&:focus { width: 100px; border-color: #666; color: #666; }
+
+		@include single-transition(width, 0.2s, linear);
+		
+		@include box-shadow(none); 
+		@include border-radius(0);
+	}
+
+	#header-searchsubmit { display: none; }
+}

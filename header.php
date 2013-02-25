@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-    <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+    <title><?php wp_title('&laquo;', true, 'right'); ?></title>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/app.css">
 	<!--[if lt IE 9]> <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie.css"> <![endif]-->
 	<!--[if lt IE 7]> <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie6.css"> <![endif]-->
@@ -15,22 +15,26 @@
 </head>
 <body <?php body_class(); ?>>
 	<div id="container">
-		<header>
-			<h1><a href="/">init Lab</a></h1>
+		<header id="top">
+			<hgroup>
+				<h1><a href="/">init Lab</a></h1>
+				<?php breadcrumbs(); ?>
+			</hgroup>
 			<?php
 
 				wp_nav_menu( array('theme_location' => 'header') );
 
-				breadcrumbs();
-
 				if(is_user_logged_in()){
-					wp_nav_menu( array('menu' => 'Header Bar (logged-in)', 'container' => '', 'menu_class' => 'headerbar_menu', 'fallback_cb' => '') );
+
 				}else {
-					wp_nav_menu( array('menu' => 'Header Bar (logged-out)', 'container' => '', 'menu_class' => 'headerbar_menu', 'fallback_cb' => '') );
+
 				}
 
 			?>
+			<form id="header-search" action="http://initlab/" method="get" role="search">
+				<label class="ss-icon" for="header-s">Search</label>
+				<input id="header-s" type="text" name="s" value="" placeholder="Търсене" >
+				<input id="header-searchsubmit" type="submit" value="Търсене">
+			</form>
 		</header>
 		<div id="main">
-
-

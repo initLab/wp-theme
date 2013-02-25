@@ -75,16 +75,16 @@ jQuery(document).ready(function ($) {
 		$.each(data, function() {
 			if(this.id != '18' && this.id != '33'){
 				if( this.twitter && this.url ){
-					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="http://twitter.com/'+ this.twitter +'">@'+ this.twitter +'</a>, <a href="'+ this.url +'">'+this.url+'</a><br /><br /></li>');
+					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="http://twitter.com/'+ this.twitter +'">@'+ this.twitter +'</a>, <a href="'+ this.url +'">'+this.url+'</a></li>');
 				}
 				else if( this.url) {
-					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="'+ this.url +'">'+this.url+'</a><br /><br /></li>');
+					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="'+ this.url +'">'+this.url+'</a></li>');
 				}
 				else if ( this.twitter ) {
-					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="http://twitter.com/'+ this.twitter +'">@'+this.twitter+'</a><br /><br /></li>');
+					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="http://twitter.com/'+ this.twitter +'">@'+this.twitter+'</a></li>');
 				}
 				else {
-					$presence.find('ul').append('<li><strong>'+this.name+'</strong><br /><br /></li>');
+					$presence.find('ul').append('<li><strong>'+this.name+'</strong></li>');
 				}
 
 			}

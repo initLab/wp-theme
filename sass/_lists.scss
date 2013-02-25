@@ -1,6 +1,4 @@
-
 .entry {
-	padding: 2em 16em 2em 3em; 
 
 	& > header {
 		
@@ -48,10 +46,7 @@
 
 .archive {
 	.entry {
-		border-top: 2px solid #ccc;
-		border-bottom: 2px solid #fff;
 
-		&:first-child { border-top: none; }
 	}
 }
 

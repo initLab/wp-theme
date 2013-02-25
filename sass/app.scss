@@ -19,6 +19,7 @@ $colorBorderSecondary: #FFF;
 
 /* Custom imports */
 @import "nuveze/_nuveze";
+@import "_fonts";
 @import "_mixins";
 @import "_typography";
 @import "_navigation";
@@ -48,11 +49,12 @@ a { @include hover-link; @include link-colors($colorLinkNormal, $colorLinkHover,
 }
 
 header#top {
-	overflow: hidden;
+	position: relative; overflow: hidden;
 	border-bottom: 2px solid $colorBorderSecondary;
 
-	hgroup { 
-		display: block; padding: 2em 0; text-align: center;  overflow: hidden; 
+	hgroup {
+		font-size: 0.7em; 
+		display: block; padding: 2em 0 2.3em 3.2em; text-align: left; overflow: hidden; 
 		border-bottom: 2px solid $colorBorderSecondary;
 
 		@include text-shadow(#EEE 2px 2px 0px, #999 4px 4px 0px);
@@ -64,7 +66,7 @@ header#top {
 		}
 		h1, h2 { display: inline; clear: none; padding: 0;   }
 		h1 { font-size: 6em; font-weight: normal; }
-		h2 { font-size: 3em; font-weight: normal; }
+		h2 { font-size: 4em; font-weight: normal; }
 	}
 
 	.menu-main-container {
@@ -83,6 +85,8 @@ footer#bottom {
 		
 		.cnt { padding-right: 2em; overflow: hidden; }
 	}
+
+	section:last-child .cnt { padding: 0; } 
 
 	#menu-sitemap {
 		li {
@@ -118,8 +122,16 @@ footer#bottom {
 	a { color: #333; }
 }
 
-.home {
+.home, .archive {
+	header#top {
+		position: relative; overflow: hidden;
+		border-bottom: 2px solid $colorBorderSecondary;
 
+		hgroup { font-size: 1em; text-align: center; padding: 2em 0 2.3em 0; }
+	}
+}
+
+.home {
 	.panel {
 		width: 50%; float: left; padding: 1em 2em;
 	}
@@ -132,6 +144,5 @@ footer#bottom {
 
 		&:first-child { border-top: 0; }
 	}
-
 }
 
