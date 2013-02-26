@@ -3,9 +3,6 @@
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
 
-	.wf-active #container { font-size: 0.75em; line-height: 1.4em;  }
-
-	#container { min-width: auto; }
 
 }
 
@@ -13,16 +10,12 @@ and (max-device-width : 480px) {
 @media only screen
 and (min-width : 321px) {
 
-	#container { min-width: auto; }
-
-
 }
 
 /* Smartphones (portrait) ----------- */
 @media only screen
 and (max-width : 320px) {
 
-	#container { min-width: auto; }
 
 }
 
@@ -31,7 +24,6 @@ and (max-width : 320px) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px) {
 
-	.wf-active #container { font-size: 0.80em; line-height: 1.4em;  }
 
 }
 
@@ -48,8 +40,6 @@ and (orientation : landscape) {
 and (max-device-width : 1024px)
 and (orientation : portrait) {
 
-	.wf-active #container { font-size: 0.85em; line-height: 1.4em;  }
-	#container { min-width: 800px; }
 
 }
 
@@ -57,15 +47,12 @@ and (orientation : portrait) {
 @media only screen
 and (min-width : 900px) {
 
-	.wf-active 	#container { font-size: 0.85em; line-height: 1.4em;  }
-
 }
 
 /* Desktops and laptops ----------- */
 @media only screen
 and (min-width : 1024px) {
 
-	.wf-active 	#container { font-size: 0.85em; line-height: 1.4em;  }
 
 }
 
@@ -73,7 +60,6 @@ and (min-width : 1024px) {
 @media only screen
 and (min-width : 1224px) {
 
-	.wf-active #container { font-size: 0.95em; line-height: 1.4em;  }
 
 }
 

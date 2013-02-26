@@ -1,9 +1,0 @@
-/* --- CSS3 Transitions and Animations --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-header h1 a { 
-	@include single-transition(all, 0.1s, linear);
-}
-
-#container {
-	@include single-transition(font-size, 0.1s, linear);
-}

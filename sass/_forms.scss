@@ -15,3 +15,6 @@ form {
 	li.gfield { width: 45%; margin-right: 4%; float: left; }
 }
 
+.ginput_container .instruction { display: none; }
+
+.gfield_required { padding-left: 0.2em; color: #C00;  } 
