@@ -98,7 +98,7 @@ jQuery(document).ready(function ($) {
 		});
 
 		if (empty) {
-			$presence.find('ul').after('<p><strong>Всички ги е хванала лисата.</strong></p>');
+			$presence.find('ul').after('<p><strong>Всички ги е хванала липсата.</strong></p>');
 		}
 
 	});
