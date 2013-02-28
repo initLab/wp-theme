@@ -29,11 +29,14 @@
 			@include transform-style(preserve-3d);     
 			@include transform(rotate(0deg));
 		}
-		& > .cnt { display: none; }
+		& > .cnt { 
+			max-height: 1px; overflow: hidden;
+			@include single-transition(max-height, 0.4s, linear);
+		}
+		&:target > .cnt { max-height: 300px; }
 
-		&.active { padding-bottom: 2em; }
-		&.active > .cnt { display: block; }
-		&.active > header h3::before {
+		&:target { padding-bottom: 2em; }
+		&:target > header h3::before {
 			margin: 0 0.48em 0 -2px; 
 			@include transform(rotate(-90deg));
 		}

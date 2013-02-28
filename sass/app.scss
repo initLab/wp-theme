@@ -24,7 +24,7 @@ $colorBorderSecondary: #FFF;
 @import "_elements";
 @import "_lists";
 @import "_forms";
-/*@import "_avatars";*/
+@import "_avatars";
 /*@import "_calendar";*/
 /*@import "_mediaqueries";*/
 
@@ -103,12 +103,7 @@ footer#bottom {
 }
 
 #copyright {
-	border-top: 2px solid $colorBorderMain;
-	padding: 1em 1em; 
-	color: #666;
-	overflow: hidden; 
-	font-size: 0.8em;
-	line-height: 1.3em; 
+	padding: 1em 1em; font-size: 0.8em; line-height: 1.3em; overflow: hidden; border-top: 2px solid $colorBorderMain; color: #666;
 
 	p { width: 50%; padding: 0; } 
 	p:first-child { float: right; text-align: right;  }
@@ -119,21 +114,18 @@ footer#bottom {
 
 .home, .archive {
 	header#top {
-		position: relative; overflow: hidden;
-		border-bottom: 2px solid $colorBorderSecondary;
+		position: relative; overflow: hidden; border-bottom: 2px solid $colorBorderSecondary;
 
 		hgroup { 
 			font-size: 1em; text-align: center; padding: 2em 0 2.3em 0;
-
 			@include text-shadow(#EEE 2px 2px 0px, #999 4px 4px 0px);		
 		}
 	}
 }
 
 .home {
-	.panel {
-		padding: 1em 2em;
-	}
+
+	.panel { padding: 1em 2em; }
 
 	.row {
 		overflow: hidden; padding: 1.5em 0; 
@@ -146,6 +138,7 @@ footer#bottom {
 		&#presence-wrapper{ padding-bottom: 0; }
 		&#site-sections {
 			padding: 2em 3em; 
+
 			#menu-hacking-coworking li { 
 				width: 50%; float: left; font-size: 1.5em; list-style: outside none; display: block; padding: 0; margin: 0; 
 				@include text-shadow(#F8F8F8 2px 2px 0px, #AAA 4px 4px 0px);
@@ -162,6 +155,7 @@ footer#bottom {
 						border-right: 2px solid $colorBorderSecondary;
 					}
 				}
+
 				&:last-child { 
 					border-left: 1px solid $colorBorderMain;
 					a {

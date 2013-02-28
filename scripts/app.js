@@ -62,10 +62,6 @@ jQuery(document).ready(function ($) {
 		template: '{user}{time}<span class="cleaner"></span>{avatar}{text}'
 	});
 
-	$(".post-type-archive-faq .entry.faq h3").click(function(){
-		$(this).parent().parent().toggleClass('active');
-	});
-
 	/* Load Tweets on the homepage */
 	//$("#gatekeeper").tweet({
 		//join_text: "",
