@@ -3,6 +3,16 @@
 	function breadcrumbs() {
 
 		global $wp_query;
+		global $post;
+		$ancestors = array_reverse(get_post_ancestors( $post->ID ));
+
+		if(count($ancestors) > 0)
+		{
+			foreach ($ancestors as $a)
+			{
+				$link[] = array( get_the_title($a), get_permalink($a) );
+			}
+		}
 
 		$type = $wp_query->query_vars[post_type];
 

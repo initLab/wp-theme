@@ -36,10 +36,21 @@
         array(
             'name' => 'Homepage',
             'description' => 'This is additional footer for the Homepage',
-            'before_widget' => '<section id="%1$s" class="panel %2$s">',
+            'before_widget' => '<section id="%1$s" class="panel col-1-2 %2$s">',
             'before_title'  => '<header><h2>',
             'after_title'   => '</h2></header><div class="content">',
             'after_widget'  => '</div></section>'
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name' => 'Hacking & Coworking',
+            'description' => 'What services do we provide',
+            'before_widget' => '',
+            'before_title'  => '',
+            'after_title'   => '',
+            'after_widget'  => ''
         )
     );
 

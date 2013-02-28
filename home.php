@@ -7,16 +7,29 @@
 <?php get_header(); ?>
 
 	<div class="row">
-		<?php dynamic_sidebar("Homepage"); ?>
+		<div class="col-2-3">
+			<?php dynamic_sidebar("Homepage"); ?>
+		</div>
+		<div class="col-1-3">
+			<section class="panel" id="panel-map">
+				<header><h2>Къде?</h2></header>
+				<div id="smallmap"></div>
+			</section>
+		</div>
+		<div class="cleaner"></div>
 	</div>
-	<div class="row">
-		<hgroup class="col w2">
-			<h2><a href="/hackerspace">Hackerspace</a></h2>
+	<div class="row" id="site-sections">
+		<?php dynamic_sidebar("Hacking & Coworking"); ?>
+<?php /* ?>
+		<hgroup>
+			<h2><a href="/hackerspace">Hacking</a></h2>
 		</hgroup>
-		<hgroup class="col w2">
-			<h2><a href="/co-working-space">Co-Working space</a></h2>
+		<hgroup>
+			<h2><a href="/co-working-space">Coworking</a></h2>
 		</hgroup>
+<?php */ ?>
 	</div>
+<?php /* ?>
 	<div class="row">
 		<section class="panel" id="calendar">
 			<header>
@@ -26,16 +39,17 @@
 			</div>
 		</section>
 	</div>
-	<div class="row">
-		<section class="messages">
+<?php */ ?>
+	<div class="row" id="presence-wrapper">
+		<section class="panel messages">
 			<header>
 				<h3>Кой e в Лаб'а?</h3>
 			</header>
-			<div  id="presence"></div>
+			<div id="presence"></div>
 		</section>
 	</div>
 	<div class="row">
-		<section class="messages">
+		<section class="panel messages">
 			<div id="tweets"></div>
 		</section>
 	</div>

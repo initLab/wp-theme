@@ -2,6 +2,22 @@
 	img { }
 }
 
+article.page {
+	padding: 2em 3em; 
+
+	header {
+		padding: 0 0 1em 0; margin-bottom: 1em; 
+		border-bottom: 1px solid $colorBorderMain; 
+		h1 {
+			font-size: 4em; 
+
+			@include text-shadow(#EEE 2px 2px 0px, #999 4px 4px 0px);
+
+			a { color: #333; }
+		}
+	}
+}
+
 .gallery {
 	li {
 		a {
@@ -11,7 +27,7 @@
 }
 
 .messages {
-	overflow: hidden; padding: 0 5px; 
+	overflow: hidden; 
 
 	.content {
 		overflow: hidden; 
@@ -38,6 +54,11 @@
 	
 	#gatekeeper {
 		li .tweet_text { padding-left: 0; } 
+	}
+
+	#presence {
+		ul { overflow: hidden; }
+		li { width: 20%; padding-bottom: 1.5em; }
 	}
 }
 
@@ -67,3 +88,11 @@
 	#searchsubmit { @extend .button; float: left; padding: 0.55em 2.2em 0.65em 2.2em; }
 }
 
+#panel-map { width: 100%; }
+#smallmap {
+	width: 100%;
+	height: 200px; 
+	border: 2px solid #999;
+	@include box-shadow(#CCC 0 0 5px);
+	@include border-radius(8px);
+}

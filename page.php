@@ -4,7 +4,7 @@
 
 		<article class="page">
 			<header>
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+				<h1><?php the_title(); ?></h1>
 			</header>
 			<div class="content">
 				<?php the_content(); ?>

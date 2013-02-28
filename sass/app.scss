@@ -4,8 +4,8 @@ $widthMinContainer: 980px;
 
 $colorBgrdBody: #F1F1F1;
 
-$colorLinkNormal: #369;
 $colorLinkHover:  #369;
+$colorLinkNormal: #369;
 $colorLinkActive: #369;
 $colorLinkVisited: #369;
 $colorLinkFocus:  #369;
@@ -14,8 +14,8 @@ $colorBorderMain: #CCC;
 $colorBorderSecondary: #FFF;
 
 /* Compass */
-@import "compass/typography/links";
 @import "compass/css3";
+@import "compass/typography/links";
 
 /* Custom imports */
 @import "nuveze/_nuveze";
@@ -24,9 +24,9 @@ $colorBorderSecondary: #FFF;
 @import "_elements";
 @import "_lists";
 @import "_forms";
-@import "_avatars";
-@import "_calendar";
-@import "_mediaqueries";
+/*@import "_avatars";*/
+/*@import "_calendar";*/
+/*@import "_mediaqueries";*/
 
 * { margin: 0; padding: 0; }
 .debug { white-space: pre; padding: 2em; }
@@ -50,11 +50,9 @@ header#top {
 	border-bottom: 2px solid $colorBorderSecondary;
 
 	hgroup {
-		font-size: 0.7em; 
+		font-size: 0.3em; 
 		display: block; padding: 2em 0 2.3em 3.2em; text-align: left; overflow: hidden; 
 		border-bottom: 2px solid $colorBorderSecondary;
-
-		@include text-shadow(#EEE 2px 2px 0px, #999 4px 4px 0px);
 
 		a { 
 			color: #333;
@@ -124,13 +122,17 @@ footer#bottom {
 		position: relative; overflow: hidden;
 		border-bottom: 2px solid $colorBorderSecondary;
 
-		hgroup { font-size: 1em; text-align: center; padding: 2em 0 2.3em 0; }
+		hgroup { 
+			font-size: 1em; text-align: center; padding: 2em 0 2.3em 0;
+
+			@include text-shadow(#EEE 2px 2px 0px, #999 4px 4px 0px);		
+		}
 	}
 }
 
 .home {
 	.panel {
-		width: 50%; float: left; padding: 1em 2em;
+		padding: 1em 2em;
 	}
 
 	.row {
@@ -140,6 +142,34 @@ footer#bottom {
 		border-bottom: 2px solid $colorBorderSecondary;
 
 		&:first-child { border-top: 0; }
+
+		&#presence-wrapper{ padding-bottom: 0; }
+		&#site-sections {
+			padding: 2em 3em; 
+			#menu-hacking-coworking li { 
+				width: 50%; float: left; font-size: 1.5em; list-style: outside none; display: block; padding: 0; margin: 0; 
+				@include text-shadow(#F8F8F8 2px 2px 0px, #AAA 4px 4px 0px);
+
+				a {
+					font-size: 2.5em; display: block; color: #444; padding: 0.9em 0 1em 0; text-align: center; 
+
+					&:hover { color: #000; text-decoration: none;  }
+				}
+
+				&:first-child { 
+					border-right: 1px solid $colorBorderMain;
+					a {
+						border-right: 2px solid $colorBorderSecondary;
+					}
+				}
+				&:last-child { 
+					border-left: 1px solid $colorBorderMain;
+					a {
+						border-left: 2px solid $colorBorderSecondary;
+					}
+				}
+			}
+		}
 	}
 }
 

@@ -7,14 +7,69 @@ form {
 	li { list-style: none outside; }
 
 	h2 { font-size: 2em; font-weight: normal;  }
+	textarea { height: 10em; } 
 }
 
-.gsection { width: auto !important; float: none !important; overflow: hidden; clear: both;  }
-
-#gform_1 {
-	li.gfield { width: 45%; margin-right: 4%; float: left; }
+.validation_error {
+	padding-bottom: 2em; margin-bottom: 2em; color: #900; 
+	@include text-shadow(#FFF 1px 1px 0px);
+	border-bottom: 1px solid $colorBorderMain;
 }
 
-.ginput_container .instruction { display: none; }
+.gform_body {
+	overflow: hidden; 
+	border-bottom: 1px solid $colorBorderSecondary;
 
-.gfield_required { padding-left: 0.2em; color: #C00;  } 
+	label { padding-bottom: 0.2em; }
+	input, textarea { margin: 0; padding: 0.4em 0.8em;  }
+
+	.gform_fields { overflow: hidden; padding-bottom: 1em; }
+	.gfield { margin-bottom: 1em; width: 45%; margin-right: 4%; float: left; overflow: hidden; }
+	.gfield.gsection { width: auto !important; float: none; clear: both; border-bottom: 1px solid $colorBorderMain; margin: 0 0 1.5em 0 !important; padding-top: 1em;  }
+	.gfield.gsection h2 { border-bottom: 1px solid $colorBorderSecondary; }
+	.ginput_container .instruction { display: none; }
+	.gfield_required { padding-left: 0.2em; color: #C00;  } 
+	.gfield_description { font-size: 0.8em; color: #999; padding-left: 0.1em;  }
+	.gfield_description.validation_message { color: #C00; @include text-shadow(#FFF 1px 1px 0px);  }
+}
+
+.gform_footer {
+	border-top: 1px solid $colorBorderMain;
+	overflow: hidden; padding: 1em 0; 
+
+	.button { float: right; margin: 0;  } 
+}
+
+#gform_1 { // Registration
+	.gfield { width: 31%; margin-right: 3%; }
+	.gfield#field_1_5,
+	.gfield#field_1_9,
+	.gfield#field_1_6	{ width: 31%; margin-right: 0; }
+}
+
+#gform_2 { // Suggest a course
+	.gfield#field_2_1 { width: 46%; margin-right: 2%; }
+	.gfield#field_2_2 { width: 22%; margin-right: 2%; }
+	.gfield#field_2_6 { width: 22%; margin-right: 0; }
+	.gfield#field_2_3 { width: 49%; margin-right: 0; float: right; }
+
+	.gfield#field_2_5 { width: 49%; margin-right: 0; float: right; }
+	.gfield#field_2_4 { width: 46%; margin-right: 4%; }
+	.gfield#field_2_8 { width: 46%; margin-right: 4%; }
+}
+
+/*
+div.gform_body { }
+div.gform_body ul.gform_fields { }
+div.gform_body ul.gform_fields li.gfield { }
+div.gform_body ul.gform_fields li.gfield.gfield_contains_required { }
+div.gform_body ul.gform_fields li.gfield label.gfield_label { }
+div.gform_body ul.gform_fields li.gfield label.gfield_label .gfield_required {  } 
+div.gform_body ul.gform_fields li.gfield div.ginput_container {
+div.gform_body ul.gform_fields li.gfield div.ginput_container input { }
+div.gform_body ul.gform_fields li.gfield div.gfield_description { }
+
+div.gform_footer { }
+div.gform_footer input.button { }
+div.gform_footer input.button.gform_button { }
+*/

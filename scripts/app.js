@@ -1,10 +1,19 @@
 function initializeMap() {
+	var myLatlng = new google.maps.LatLng(42.681852,23.321974);
 	var mapOptions = {
 		zoom: 15,
+		maxZoom: 16,
+		minZoom: 14,
 		center: new google.maps.LatLng(42.681852,23.321974),
+		disableDefaultUI: true,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	}
-	var map = new google.maps.Map(document.getElementById("map_address"), mapOptions);
+	var map = new google.maps.Map(document.getElementById("smallmap"), mapOptions);
+	var marker = new google.maps.Marker({
+		position: myLatlng,
+		title:"init Lab"
+	});
+	marker.setMap(map);
 }
 
 function loadGMaps() {
@@ -32,7 +41,7 @@ jQuery(document).ready(function ($) {
 		}
 	};
 
-	//loadGMaps();
+	loadGMaps();
 
 	(function(){
 		var wf = document.createElement('script');
@@ -47,7 +56,7 @@ jQuery(document).ready(function ($) {
 	$("#tweets").tweet({
 		join_text: "",
 		avatar_size: 52,
-		count: 3,
+		count: 6,
 		query: "#initlab",
 		loading_text: "Loading tweets...",
 		template: '{user}{time}<span class="cleaner"></span>{avatar}{text}'
@@ -72,23 +81,30 @@ jQuery(document).ready(function ($) {
 		$presence = $('#presence');
 		$presence.append('<ul />');
 
+		var empty = true;
+
 		$.each(data, function() {
 			if(this.id != '18' && this.id != '33'){
-				if( this.twitter && this.url ){
-					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="http://twitter.com/'+ this.twitter +'">@'+ this.twitter +'</a>, <a href="'+ this.url +'">'+this.url+'</a></li>');
-				}
-				else if( this.url) {
-					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="'+ this.url +'">'+this.url+'</a></li>');
-				}
-				else if ( this.twitter ) {
+				//if( this.twitter && this.url ){
+					//$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="http://twitter.com/'+ this.twitter +'">@'+ this.twitter +'</a>, <a href="'+ this.url +'">'+this.url+'</a></li>');
+				//}
+				//else if( this.url) {
+					//$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="'+ this.url +'">'+this.url+'</a></li>');
+				//}
+				if ( this.twitter ) {
 					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="http://twitter.com/'+ this.twitter +'">@'+this.twitter+'</a></li>');
 				}
 				else {
 					$presence.find('ul').append('<li><strong>'+this.name+'</strong></li>');
 				}
-
+				empty = false;
 			}
 		});
+
+		if (empty) {
+			$presence.find('ul').after('<p><strong>Всички ги е хванала лисата.</strong></p>');
+		}
+
 	});
 
 	$('#flickr').jflickrfeed({
