@@ -18,7 +18,8 @@ $colorBorderSecondary: #FFF;
 @import "compass/typography/links";
 
 /* Custom imports */
-@import "nuveze/_nuveze";
+// @import "nuveze/_nuveze";
+@import "foundation/_foundation";
 @import "_typography";
 @import "_navigation";
 @import "_elements";
