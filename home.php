@@ -20,14 +20,6 @@
 	</div>
 	<div class="row" id="site-sections">
 		<?php dynamic_sidebar("Hacking & Coworking"); ?>
-<?php /* ?>
-		<hgroup>
-			<h2><a href="/hackerspace">Hacking</a></h2>
-		</hgroup>
-		<hgroup>
-			<h2><a href="/co-working-space">Coworking</a></h2>
-		</hgroup>
-<?php */ ?>
 	</div>
 <?php /* ?>
 	<div class="row">
