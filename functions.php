@@ -25,7 +25,7 @@
         array(
             'name' => 'Index',
             'description' => 'This widget area is on top of the content on the homepage',
-            'before_widget' => '<section id="%1$s" class="mod %2$s">',
+            'before_widget' => '<section id="%1$s" class="%2$s">',
             'before_title'  => '<header><h2>',
             'after_title'   => '</h2></header><div class="cnt">',
             'after_widget'  => '</div></section>'
@@ -36,7 +36,7 @@
         array(
             'name' => 'Homepage',
             'description' => 'This is additional footer for the Homepage',
-            'before_widget' => '<section id="%1$s" class="panel col-1-2 %2$s">',
+            'before_widget' => '<section id="%1$s" class="%2$s">',
             'before_title'  => '<header><h2>',
             'after_title'   => '</h2></header><div class="content">',
             'after_widget'  => '</div></section>'
@@ -58,7 +58,7 @@
         array(
             'name' => 'Footer',
             'description' => 'This is Footer widget area',
-            'before_widget' => '<section id="%1$s" class="mod %2$s">',
+            'before_widget' => '<section id="%1$s" class="%2$s">',
             'before_title'  => '<header><h3>',
             'after_title'   => '</h3></header><div class="cnt">',
             'after_widget'  => '</div></section>'

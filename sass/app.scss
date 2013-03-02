@@ -18,8 +18,7 @@ $colorBorderSecondary: #FFF;
 @import "compass/typography/links";
 
 /* Custom imports */
-// @import "nuveze/_nuveze";
-@import "foundation/_foundation";
+@import "nuveze/_nuveze";
 @import "_typography";
 @import "_navigation";
 @import "_elements";
@@ -72,9 +71,8 @@ header#top {
 }
 
 footer#bottom { 
-	padding: 2em 3em; overflow: hidden; font-size: 0.9em; 
+	overflow: hidden; 
 	border-top: 2px solid $colorBorderMain; 
-	border-bottom: 2px solid $colorBorderSecondary; 
 
 	section.mod {
 		width: 33.33%; float: left; overflow: hidden; 
@@ -126,22 +124,29 @@ footer#bottom {
 
 .home {
 
-	.panel { padding: 1em 2em; }
-
 	.row {
-		overflow: hidden; padding: 1.5em 0; 
+		//@include grid-row;
+		overflow: hidden; padding: 2em 3em; 
 
 		border-top: 2px solid $colorBorderMain;
 		border-bottom: 2px solid $colorBorderSecondary;
 
+		section {
+			width: 33.3%; float: left; padding-right: 2em;
+
+			&:last-child { padding-right: 0; }
+
+			&#presence-wrapper,
+			&#tweets-wrapper { padding-bottom: 0; width: 100%; }
+		}
+		
+
 		&:first-child { border-top: 0; }
 
-		&#presence-wrapper{ padding-bottom: 0; }
 		&#site-sections {
-			padding: 2em 3em; 
 
 			#menu-hacking-coworking li { 
-				width: 50%; float: left; font-size: 1.5em; list-style: outside none; display: block; padding: 0; margin: 0; 
+				display: block; padding: 0; margin: 0; width: 50%; float: left; font-size: 1.5em; list-style: outside none; 
 				@include text-shadow(#F8F8F8 2px 2px 0px, #AAA 4px 4px 0px);
 
 				a {

@@ -7,16 +7,11 @@
 <?php get_header(); ?>
 
 	<div class="row">
-		<div class="col-2-3">
-			<?php dynamic_sidebar("Homepage"); ?>
-		</div>
-		<div class="col-1-3">
-			<section class="panel" id="panel-map">
-				<header><h2>Къде?</h2></header>
-				<div id="smallmap"></div>
-			</section>
-		</div>
-		<div class="cleaner"></div>
+		<?php dynamic_sidebar("Homepage"); ?>
+		<section id="panel-map">
+			<header><h2>Къде?</h2></header>
+			<div id="smallmap"></div>
+		</section>
 	</div>
 	<div class="row" id="site-sections">
 		<?php dynamic_sidebar("Hacking & Coworking"); ?>
@@ -32,8 +27,8 @@
 		</section>
 	</div>
 <?php */ ?>
-	<div class="row" id="presence-wrapper">
-		<section class="panel messages">
+	<div class="row" >
+		<section class="messages" id="presence-wrapper">
 			<header>
 				<h3>Кой e в Лаб'а?</h3>
 			</header>
@@ -41,7 +36,7 @@
 		</section>
 	</div>
 	<div class="row">
-		<section class="panel messages">
+		<section class="messages" id="tweets-wrapper">
 			<div id="tweets"></div>
 		</section>
 	</div>
