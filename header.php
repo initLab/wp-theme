@@ -24,12 +24,6 @@
 
 				wp_nav_menu( array('theme_location' => 'header') );
 
-				if(is_user_logged_in()){
-
-				}else {
-
-				}
-
 			?>
 			<form id="header-search" action="http://initlab/" method="get" role="search">
 				<label class="ss-icon" for="header-s">Search</label>
