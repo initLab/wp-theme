@@ -7,26 +7,11 @@
 <?php get_header(); ?>
 
 	<div class="row">
-		<?php dynamic_sidebar("Homepage"); ?>
-		<section id="panel-map">
-			<header><h2>Къде?</h2></header>
-			<div id="smallmap"></div>
-		</section>
+		<?php dynamic_sidebar("Homepage - Row 1"); ?>
 	</div>
 	<div class="row" id="site-sections">
-		<?php dynamic_sidebar("Hacking & Coworking"); ?>
+		<?php dynamic_sidebar("Homepage - Row 2"); ?>
 	</div>
-<?php /* ?>
-	<div class="row">
-		<section class="panel" id="calendar">
-			<header>
-				<h3>Предстоящи събития</h3>
-			</header>
-			<div class="content">
-			</div>
-		</section>
-	</div>
-<?php */ ?>
 	<div class="row" >
 		<section class="messages" id="presence-wrapper">
 			<header>
@@ -36,7 +21,20 @@
 		</section>
 	</div>
 	<div class="row">
+		<section class="panel" id="calendar">
+			<header>
+				<h3>Предстоящи събития</h3>
+			</header>
+			<div class="content">
+				<?php echo do_shortcode("[ftcalendar calendars='events' types='off' legend='off' show_rss_feed='off' show_ical_feed='off']"); ?>
+			</div>
+		</section>
+	</div>
+	<div class="row">
 		<section class="messages" id="tweets-wrapper">
+			<header>
+				<h3>init Lab в Twitter</h3>
+			</header>
 			<div id="tweets"></div>
 		</section>
 	</div>

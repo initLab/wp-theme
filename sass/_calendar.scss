@@ -1,61 +1,97 @@
 /* --- calendar --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-.page.slug-calendar .primary .hfeed .kjo-link p { display: none !important; }
 
-table.calendar-table { 
-	width: 100%;  table-layout: fixed; border-collapse: collapse; margin-bottom: 1.5em; 
+#calendar #ftcalendar-div {
+	background: none;
+	border: none;	
 
-	td { padding: 3px 5px; border: 2px solid #DDD; }
+	#ftcalendar-feeds { }
+	
+	#ftcalendar-nav { 
+		overflow: hidden;
+		position: relative; 
 
-	td.calendar-heading { padding: 0; border: none; 
-		table { padding: 0; margin: 0; border: none; }
-		table td { height: auto; padding: 5px 10px; font-size: 18px; border: none; }
-		table td.calendar-prev {  }
-		table td.calendar-month { text-align: center; border-left: none; }
-		table td.calendar-next { text-align: right; }
+		span {
+			display: block;
+			width: 2em; height: 2em; 
+			position: absolute; 
+
+			a { display: block; width: 100%; height: 100%; color: #444;   }
+		}
+
+		#ftcalendar-prev {
+			left: 0; top: 0;
+
+			a {  }
+		}
+
+		#ftcalendar-next {
+			right: 0; top: 0;
+			a { text-align: right; }
+		}
+
+		#ftcalendar-current {
+			left: 0; top: 0;
+			width: 100%; 
+			text-align: center; 
+		}
+
 	}
 
-	td.normal-day-heading,
-	td.weekend-heading { font-weight: bold; text-align: center; padding: 5px; height: auto;  }
-	td.weekend-heading {  }
-	td.current-day { background: #EEF; }
-	td.day-with-date { background: #FFF; }
-	td.day-with-date.no-events { background: #F8F8F8; }
-	td.day-without-date { background: #EEE; }
-	td.day-with-date { vertical-align: bottom; }
-	td.day-with-date.no-events {  }
-	td.day-with-date { }
+	#ftcalendar-table { 
+		background: none; 
+		border-spacing: 0;
+		border: solid #CCC;
+		border-width: 1px 0 0 1px;
 
-	td { height: 60px; vertical-align: top !important; }
-	td span { display: block; }
-	td > span { display: block; font-size: 18px; padding: 5px 0 10px 0; clear: both; }
+		th, td {
+			border-top-color: #FFF;
+			border-left-color: #FFF;
+			border-right-color: #CCC;
+			border-bottom-color: #CCC;
+		}
 
-	td span.event { font-size: 1px; color: #FFF; font-weight: bold; color: #090; cursor: pointer; padding: 0; }
-	td span.event br { display: block; height: 1px; line-height: 1px; overflow: hidden; }
+		th {
+			padding: 0.2em 0; 
+			background: rgba(0, 0, 0, 0.1); 
+			
+		}
 
-	td span.event span.calnk {
-		display: inline; font-size: 12px; color: #000;
+		td { 
+			background: none;
+		
+			.ftcalendar-event-date {
+				background: rgba(0, 0, 0, 0.05); 
+				padding: 0.2em 0.2em 0.2em 0; 
+			}
+		
+			&.current_day {
+				background: rgba(255,255,255, 0.8); 
 
-		a { display: inline; position: relative; text-decoration: none !important; color: #369; padding: 0 0 0 3px; }
-		a > span { display: none; width: 200px; background: #FFF; position: absolute; bottom: 100%; right: 0; padding: 10px; border: 1px solid #CCC; text-decoration: none !important; }
-		a > span br { display: none; }
-		a > span .event-title {  }
-		a > span .event-title-break { display: none; }
-		a > span .event-content-break { display: block; height: 5px;  }
-		a > span strong { font-weight: normal; text-decoration: none; }
+				.ftcalendar-event-date {
+					background: rgba(0, 0, 0, 0.03); 
+				}
+		   	}
+
+			.ftcalendar-events-div {
+				background: none; 
+
+				.ftcalendar-event {
+					background: none; 
+					border: none;
+
+					div {
+						background: rgba(255,255,255, 0.8);
+						border: none;
+						border-bottom: 1px solid #DDD; 
+
+						a { display: block; padding: 0.1em 0 0.2em 0;  }
+					}
+				}
+			}
+		}
 	}
 
-	tr td:first-child span.event span.calnk a > span { bottom: 100%; right: -100%; }
-	td span.event span.calnk a:hover > span { display: block; text-decoration: none !important; color: #000; }
-
-	td table.cat-key { border: none; margin: 0; display: none; }
-	td table.cat-key td { padding: 0; border: none; height: auto;  }
-	td table.cat-key strong { display: none; }
-
-	& + div.kjo-link p { display: none; }
-
+	#ftcalendar-legend { }
 }
 
-.page-id-1123.page article.entry { padding-right: 3em;}
 
-
-.home .calendar-date-switcher { display: none; }
