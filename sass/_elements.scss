@@ -1,4 +1,5 @@
 article.page {
+	overflow: hidden; 
 
 	header {
 		padding: 0 0 1em 0; margin-bottom: 1em; 
@@ -11,6 +12,42 @@ article.page {
 
 			a { color: #333; }
 		}
+	}
+
+	& > header {
+		border-bottom-width: 2px;
+		padding: 0;
+		margin-bottom: 2em; 
+
+		h1 {
+			padding-bottom: 0.4em; 
+			border-bottom: 2px solid #FFF; 
+		}
+	}
+}
+
+article.courses {
+	overflow: hidden; 
+	
+	section header {
+		padding: 0;
+		border-color: #CCC;
+
+		h3 { 
+			padding: 0 0 0.2em 0;
+			border-bottom: 1px solid #FFF; 
+	   	}
+	}
+
+	.content {
+		width: 68%;
+		float: left;
+	}
+
+	.sidebar {
+		width: 28%;
+		float: left;
+		margin-left: 4%;
 	}
 }
 
@@ -34,8 +71,13 @@ article.page {
 		.tweet_user:before { content: '@'; }
 		.tweet_user:after { content: ', '; }
 		.tweet_time { display: block; float: left; padding-left: 5px; }
-		.tweet_avatar { display: block; float: left; margin: 9px 0.4em 0 0.1em; clear: left; }
+		.tweet_avatar { display: block; float: left; margin: 9px 1em 0 0.1em; clear: left; }
 		.tweet_text { display: block; padding: 0 1em 0 4.2em; margin: 5px; }
+
+	}
+	
+	#tweets li:nth-child(3n-2) { 
+		clear: both; 
 	}
 	
 	#gatekeeper {

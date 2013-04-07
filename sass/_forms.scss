@@ -8,6 +8,9 @@ form {
 
 	h2 { font-size: 2em; font-weight: normal;  }
 	textarea { height: 10em; } 
+
+	&.feedback {
+	}
 }
 
 .validation_error {
@@ -58,6 +61,25 @@ form {
 	.gfield#field_2_8 { width: 46%; margin-right: 4%; }
 }
 
+#gform_3 {
+	border: 1px solid #CCC; 
+	width: 60%; 
+	float: left; 
+	padding: 0; 
+	margin: 1em 2em 0 0; 
+	margin-bottom: 2em; 
+
+	.gform_body, .gform_footer {
+		padding: 2em; 
+		border: 1px solid #FFF; 
+	}
+
+	.gform_body { border-bottom-color: #CCC; padding-bottom: 0;  }
+
+	.gfield#field_3_1,
+	.gfield#field_3_2 { width: 60%; }
+	.gfield#field_3_3 { width: 100%; }
+}
 /*
 div.gform_body { }
 div.gform_body ul.gform_fields { }

@@ -25,7 +25,7 @@ $colorBorderSecondary: #FFF;
 @import "_lists";
 @import "_forms";
 @import "_avatars";
-/*@import "_calendar";*/
+@import "_calendar";
 /*@import "_mediaqueries";*/
 
 * { margin: 0; padding: 0; }
@@ -136,6 +136,7 @@ footer#bottom {
 		&:last-child { padding-right: 0; }
 
 		&#presence-wrapper,
+		&#calendar,
 		&#tweets-wrapper { padding-bottom: 0; width: 100%; }
 	}
 

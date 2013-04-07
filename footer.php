@@ -1,6 +1,8 @@
 		</div>
 		<footer id="bottom">
-			<div class="row"><?php dynamic_sidebar("Footer"); ?></div>
+			<div class="row">
+				<?php dynamic_sidebar("Footer"); ?>
+			</div>
 		</footer>
 		<div id="copyright">
 			<p>Proudly running on <a href="http://wordpress.org/">Wordpress</a>. WP Theme source code is at <a href="http://github.com/organizations/initlab">GitHib</a></p>
