@@ -1,3 +1,45 @@
+.list-wrapper {
+	width: 65%;
+	margin-right: 5%; 
+	float: left; 
+
+	& + aside {
+		width: 30%;
+		float: left; 
+	}
+}
+
+
+
+article.entry {
+	padding: 0 0 2em 0; 
+
+	header {
+
+		h3 {
+			a { color: #333; display: block;  } 
+		}
+
+		p.meta {
+			background: #E5E5E5; 
+			font-size: 0.9em;
+			line-height: 1em;
+			padding: 0.5em 0.8em; 
+			margin-top: -0.5em; 
+			margin-bottom: 0.5em; 
+			&, a { color: #666; }
+			&:hover a { color: #000; } 
+		}
+	}
+
+	.content {
+	}
+
+	&:hover {
+		h3 a { color: #000; }
+	}
+}
+
 article.page {
 	overflow: hidden; 
 
@@ -64,8 +106,8 @@ article.courses {
 
 	ul { padding: 0.1em; overflow: hidden; }
 
-	li {
-		display: block; width: 33%; float: left; 
+	ul li {
+		display: block; width: 33%; float: left; list-style-type: none !important; 
 		
 		.tweet_user { display: block; float: left; }
 		.tweet_user:before { content: '@'; }
@@ -80,6 +122,8 @@ article.courses {
 		clear: both; 
 	}
 	
+	aside &#tweets ul li { width: auto; padding-bottom: 2em;  } 
+
 	#gatekeeper {
 		li .tweet_text { padding-left: 0; } 
 	}
@@ -89,6 +133,7 @@ article.courses {
 		li { width: 20%; padding-bottom: 1.5em; }
 	}
 }
+
 
 #flickr {
 	padding: 0;

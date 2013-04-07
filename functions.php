@@ -71,29 +71,40 @@
     register_nav_menu( 'sitemap', 'Sitemap');
     register_nav_menu( 'footer', 'Footer');
 
-//change author/username base to users/userID
-function change_author_permalinks() {
-  global $wp_rewrite;
-   // Change the value of the author permalink base to whatever you want here
-   $wp_rewrite->author_base = 'users';
-  $wp_rewrite->flush_rules();
-}
-add_action('init','change_author_permalinks');
+	//change author/username base to users/userID
+	function change_author_permalinks() {
+	  global $wp_rewrite;
+	   // Change the value of the author permalink base to whatever you want here
+	   $wp_rewrite->author_base = 'users';
+	  $wp_rewrite->flush_rules();
+	}
+	add_action('init','change_author_permalinks');
 
-function users_query_vars($vars) {
-    // add lid to the valid list of variables
-    $new_vars = array('users');
-    $vars = $new_vars + $vars;
-    return $vars;
-}
-add_filter('query_vars', 'users_query_vars');
+	function users_query_vars($vars) {
+		// add lid to the valid list of variables
+		$new_vars = array('users');
+		$vars = $new_vars + $vars;
+		return $vars;
+	}
+	add_filter('query_vars', 'users_query_vars');
 
-function user_rewrite_rules( $wp_rewrite ) {
-  $newrules = array();
-  $new_rules['users/(\d*)$'] = 'index.php?author=$matches[1]';
-  $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
-}
-add_filter('generate_rewrite_rules','user_rewrite_rules');
+	function user_rewrite_rules( $wp_rewrite ) {
+	  $newrules = array();
+	  $new_rules['users/(\d*)$'] = 'index.php?author=$matches[1]';
+	  $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+	}
+	add_filter('generate_rewrite_rules','user_rewrite_rules');
 
+	// Change the_excerpt character length
+	function custom_excerpt_length( $length ) {
+		return 40;
+	}
+	add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+	// Change the more string for the_excerpt function
+	function new_excerpt_more( $more ) {
+		return ' ...';
+	}
+	add_filter('excerpt_more', 'new_excerpt_more');
 
 ?>
