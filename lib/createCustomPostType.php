@@ -57,7 +57,7 @@
 				'publicly_queryable' => true,
 				'query_var' => 'news',
 				'has_archive' => true,
-				'rewrite' => array('slug' => 'news'),
+				'rewrite' => array( 'slug' => 'news' ),
 				'supports' => array(
 					'title',
 					'excerpt',
@@ -89,7 +89,7 @@
 				'menu_position' => 5,
 				'public' => true,
 				'publicly_queryable' => true,
-				'query_var' => 'news',
+				'query_var' => 'faq',
 				'has_archive' => true,
 				'rewrite' => array('slug' => 'faq'),
 				'supports' => array(

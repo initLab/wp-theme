@@ -1,8 +1,5 @@
 <?php get_header(); ?>
 	
-	<?php
-		de($wp_query);
-	?>
 	<?php if (have_posts()) { while (have_posts()) { the_post(); ?>
 
 		<article class="page">
