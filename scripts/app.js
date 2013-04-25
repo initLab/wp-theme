@@ -27,7 +27,6 @@ jQuery(document).ready(function ($) {
 
 	WebFontConfig = {
 		google: { families: [ 'PT+Sans' ] },
-		//custom: { families: [ 'PictosWeb' ], urls: [ '/content/themes/initlab/css/fonts/fonts.css' ] },
 		loading: function() {
 			// Called when all the specified web-font provider modules (google, typekit, and/or custom) have reported that they have started loading fonts.
 
@@ -40,6 +39,14 @@ jQuery(document).ready(function ($) {
 
 		}
 	};
+	(function() {
+		var wf = document.createElement('script');
+		wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+		wf.type = 'text/javascript';
+		wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(wf, s);
+	})();
 
 	loadGMaps();
 
