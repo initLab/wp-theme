@@ -9,9 +9,11 @@
 	<div class="row">
 		<?php dynamic_sidebar("Homepage - Row 1"); ?>
 	</div>
+	<?php /*
 	<div class="row" id="site-sections">
 		<?php dynamic_sidebar("Homepage - Row 2"); ?>
 	</div>
+	*/ ?>
 	<div class="row" >
 		<section class="messages" id="presence-wrapper">
 			<header>
