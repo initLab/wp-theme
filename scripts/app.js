@@ -64,9 +64,9 @@ jQuery(document).ready(function ($) {
 		$presence.append('<ul />');
 
 		var empty = true;
-
+		console.log(data);	
 		$.each(data, function() {
-			if(this.id != '18' && this.id != '33'){
+			if(this.id != '18' && this.id != '33' && this.id != '69' && this.id != '70' && this.id != '71'){
 				//if( this.twitter && this.url ){
 					//$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="http://twitter.com/'+ this.twitter +'">@'+ this.twitter +'</a>, <a href="'+ this.url +'">'+this.url+'</a></li>');
 				//}
