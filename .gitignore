@@ -3,3 +3,4 @@
 css/*
 !css/.gitignore
 .sass-cache
+merge_*
