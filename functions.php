@@ -111,46 +111,8 @@
 	}
 	add_filter('excerpt_more', 'new_excerpt_more');
 
-	//Ensure the $wp_rewrite global is loaded
-	//global $wp_rewrite;
-	//Call flush_rules() as a method of the $wp_rewrite object
-	//$wp_rewrite->flush_rules();
-	//flush_rewrite_rules();
 
-	function dev4press_debug_rewrite_rules() {
-		global $wp_rewrite;
-		echo '<div>';
-		if (!empty($wp_rewrite->rules)) {
-			echo '<h5>Rewrite Rules</h5>';
-			echo '<table><thead><tr>';
-			echo '<td>Rule</td><td>Rewrite</td>';
-			echo '</tr></thead><tbody>';
-			foreach ($wp_rewrite->rules as $name => $value) {
-				echo '<tr><td>'.$name.'</td><td>'.$value.'</td></tr>';
-			}
-			echo '</tbody></table>';
-		} else {
-			echo 'No rules defined.';
-		}
-		echo '</div>';
-	}
 
-	function dev4press_debug_page_request() {
-		global $wp, $template;
-		define("D4P_EOL", "\r\n");
-
-		echo 'Request: ';
-		echo empty($wp->request) ? "None" : esc_html($wp->request);
-		echo ''.D4P_EOL;
-		echo '<br />Matched Rewrite Rule: ';
-		echo empty($wp->matched_rule) ? None : esc_html($wp->matched_rule);
-		echo ''.D4P_EOL;
-		echo '<br />Matched Rewrite Query: ';
-		echo empty($wp->matched_query) ? "None" : esc_html($wp->matched_query);
-		echo ''.D4P_EOL;
-		echo '<br />Loaded Template: ';
-		echo basename($template);
-		echo ''.D4P_EOL;
-	}
+	
 
 ?>
