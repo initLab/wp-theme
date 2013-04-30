@@ -52,17 +52,19 @@
 		// Check if any user IDs were returned; if so, display!
 		// If not, notify visitor none were found.
 		if ($userIDs) {
-			$content = "<div class='group-list'> <ul>";
+			$content = '<ul class="group-list">';
 			foreach( $userIDs as $userID ) {
 				$user = get_user_by('id', $userID);
-				$content .= "<li>";
-				$content .= get_avatar( $user->ID, 70 );
-				$content .= "<h3>" . $user->display_name . "</h3>";
-				$content .= "<p><a href='". get_author_posts_url( $user->ID ) . "' class='more-info-icon'>More info</a>";
-				$content .= "<!-- add more here --></p>";
-				$content .= "</li>";
+				$content .= '<li>';
+				$content .= '<a href="'. get_author_posts_url( $user->ID ) . '">';
+				$content .= '<span class="avatar">';
+				$content .= get_avatar( $user->ID, 120 );
+				$content .= '</span>';
+				$content .= '<span class="name">' . $user->display_name . '</span>';
+				$content .= '</a>';
+				$content .= '</li>';
 			}
-			$content .= "</ul></div>";
+			$content .= "</ul>";
 		} else {
 			$content =
 				"<div class='group-list group-list-none'>Returned no results</div>";
