@@ -79,14 +79,14 @@
 	function change_author_permalinks() {
 	  global $wp_rewrite;
 	   // Change the value of the author permalink base to whatever you want here
-	   $wp_rewrite->author_base = 'users';
+	   $wp_rewrite->author_base = 'labbers';
 	  $wp_rewrite->flush_rules();
 	}
 	add_action('init','change_author_permalinks');
 
 	function users_query_vars($vars) {
 		// add lid to the valid list of variables
-		$new_vars = array('users');
+		$new_vars = array('labbers');
 		$vars = $new_vars + $vars;
 		return $vars;
 	}
@@ -94,7 +94,7 @@
 
 	function user_rewrite_rules( $wp_rewrite ) {
 	  $newrules = array();
-	  $new_rules['users/(\d*)$'] = 'index.php?author=$matches[1]';
+	  $new_rules['labbers/(\d*)$'] = 'index.php?author=$matches[1]';
 	  $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
 	}
 	add_filter('generate_rewrite_rules','user_rewrite_rules');
