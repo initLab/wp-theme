@@ -4,7 +4,9 @@
 
 		global $wp_query;
 		global $post;
+
 		$ancestors = array_reverse(get_post_ancestors( $post->ID ));
+		$type = $wp_query->query_vars[post_type];
 
 		if(count($ancestors) > 0)
 		{
@@ -13,16 +15,19 @@
 				$link[] = array( get_the_title($a), get_permalink($a) );
 			}
 		}
-
-		$type = $wp_query->query_vars[post_type];
-
-		if($type)
+		elseif($type)
 		{
 			$link[] = array( ucfirst($type), '/'.$type );
 		}
 		else
 		{
-			$link[] = array( get_the_title(), get_permalink() );
+			if( is_author() ){
+				$link[] = array( 'Labber', '/labbers' );
+			}
+			else
+			{
+				$link[] = array( get_the_title(), get_permalink() );
+			}
 		}
 
 		foreach($link as $l)
@@ -33,6 +38,7 @@
 			elseif ($l[0]=='Events')	{ echo '<h2>&nbsp;/ <a href="'.$l[1].'">Събития</a></h2>';		}
 			elseif ($l[0]=='Courses')	{ echo '<h2>&nbsp;/ <a href="'.$l[1].'">Курсове</a></h2>';		}
 			elseif ($l[0]=='News')		{ echo '<h2>&nbsp;/ <a href="'.$l[1].'">Новини</a></h2>';		}
+			elseif ($l[0]=='Labber')	{ echo '<h2>&nbsp;/ <a href="'.$l[1].'">Лаб`ъри</a></h2>'; }
 			else
 			{
 				echo '<h2>&nbsp;/ <a href="'.$l[1].'">'.$l[0].'</a></h2>';
