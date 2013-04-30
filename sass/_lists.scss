@@ -54,3 +54,17 @@
 }
 
 .post-type-archive-faq #main { padding: 1.6em 0 1em 0; }
+
+
+.group-list {
+	overflow: hidden;
+	padding: 5px; 
+	li {
+		display: block;
+		width: 20%;
+		float: left;
+		list-style: none outside;
+
+		span.name { display: block; padding-top: 5px; }
+	}
+}
