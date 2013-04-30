@@ -9,11 +9,9 @@
 	<div class="row">
 		<?php dynamic_sidebar("Homepage - Row 1"); ?>
 	</div>
-	<?php /*
 	<div class="row" id="site-sections">
 		<?php dynamic_sidebar("Homepage - Row 2"); ?>
 	</div>
-	*/ ?>
 	<div class="row" >
 		<section class="messages" id="presence-wrapper">
 			<header>
@@ -23,14 +21,7 @@
 		</section>
 	</div>
 	<div class="row">
-		<section class="panel" id="calendar">
-			<header>
-				<h3>Предстоящи събития</h3>
-			</header>
-			<div class="content">
-				<?php echo do_shortcode("[ftcalendar calendars='events' types='off' legend='off' show_rss_feed='off' show_ical_feed='off']"); ?>
-			</div>
-		</section>
+		<?php dynamic_sidebar("Homepage - Row 3"); ?>
 	</div>
 	<div class="row">
 		<section class="messages" id="tweets-wrapper">

@@ -35,8 +35,8 @@ function loadGMaps() {
 }
 
 jQuery(document).ready(function ($) {
-
-	loadGMaps();
+	
+	if( $('body').hasClass('home') ) loadGMaps();
 
 	/* Load Tweets on the homepage */
 	$("#tweets").tweet({
@@ -64,7 +64,6 @@ jQuery(document).ready(function ($) {
 		$presence.append('<ul />');
 
 		var empty = true;
-		console.log(data);	
 		$.each(data, function() {
 			if(this.id != '18' && this.id != '33' && this.id != '69' && this.id != '70' && this.id != '71'){
 				//if( this.twitter && this.url ){

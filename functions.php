@@ -57,6 +57,17 @@
             'after_title'   => '',
             'after_widget'  => ''
         )
+	);
+
+    register_sidebar(
+        array(
+            'name' => 'Homepage - Row 3',
+            'description' => '',
+            'before_widget' => '<section class="upcoming-events">',
+            'before_title'  => '<header><h3>',
+            'after_title'   => '</h3></header>',
+            'after_widget'  => '</section>'
+        )
     );
 
     register_sidebar(

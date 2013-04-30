@@ -1,97 +1,102 @@
-/* --- calendar --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* --- Calendar --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-#calendar #ftcalendar-div {
-	background: none;
-	border: none;	
+#tribe-events-content {}
+#tribe-events-calendar-header {
 
-	#ftcalendar-feeds { }
-	
-	#ftcalendar-nav { 
+	.tribe-events-month-nav {
 		overflow: hidden;
-		position: relative; 
 
-		span {
-			display: block;
-			width: 2em; height: 2em; 
-			position: absolute; 
-
-			a { display: block; width: 100%; height: 100%; color: #444;   }
+		& > span, & > form {
+			float: left; 
 		}
 
-		#ftcalendar-prev {
-			left: 0; top: 0;
-
-			a {  }
+		& > span {
+			width: 20%; 
 		}
 
-		#ftcalendar-next {
-			right: 0; top: 0;
-			a { text-align: right; }
+		& > form {
+			width: 60%;
+			padding: 0 0 1em 8em;
+			overflow: hidden; 
 		}
 
-		#ftcalendar-current {
-			left: 0; top: 0;
-			width: 100%; 
-			text-align: center; 
-		}
-
+		.tribe-events-prev-month {}
+		.tribe-events-next-month { text-align: right; }
 	}
 
-	#ftcalendar-table { 
-		background: none; 
-		border-spacing: 0;
-		border: solid #CCC;
-		border-width: 1px 0 0 1px;
-
-		th, td {
-			border-top-color: #FFF;
-			border-left-color: #FFF;
-			border-right-color: #CCC;
-			border-bottom-color: #CCC;
-		}
-
-		th {
-			padding: 0.2em 0; 
-			background: rgba(0, 0, 0, 0.1); 
-			
-		}
-
-		td { 
-			background: none;
-		
-			.ftcalendar-event-date {
-				background: rgba(0, 0, 0, 0.05); 
-				padding: 0.2em 0.2em 0.2em 0; 
-			}
-		
-			&.current_day {
-				background: rgba(255,255,255, 0.8); 
-
-				.ftcalendar-event-date {
-					background: rgba(0, 0, 0, 0.03); 
-				}
-		   	}
-
-			.ftcalendar-events-div {
-				background: none; 
-
-				.ftcalendar-event {
-					background: none; 
-					border: none;
-
-					div {
-						background: rgba(255,255,255, 0.8);
-						border: none;
-						border-bottom: 1px solid #DDD; 
-
-						a { display: block; padding: 0.1em 0 0.2em 0;  }
-					}
-				}
-			}
-		}
+	form select {
+		float: left;
+		width: 30%;
+		margin: 0 1%; 
 	}
 
-	#ftcalendar-legend { }
+	.tribe-events-calendar-buttons { display: none; }
 }
 
+table.tribe-events-calendar {
+	width: 100%;
+	table-layout: fixed;
+	border-spacing: 0;
+	margin-bottom: 2em; 
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+
+	td, th {
+		border: 1px solid #CCC;
+		border-left-color: #FFF;
+		border-top-color: #FFF;
+	}
+
+	thead {
+		th { background: #CCC;  }
+	}
+
+	tbody {
+		td { 
+			height: 90px;
+			min-height: 90px;
+			vertical-align: top;
+			.daynum { 
+				font-size: 0.8em;
+				line-height: 1em; 
+				padding: 0.2em 0.6em 0.4em 0;
+				text-align: right;
+				background: rgba(0, 0, 0, 0.05);
+				border-bottom: 1px solid #F8F8F8; 				
+			}
+
+			/*tribe_events type-tribe_events status-publish hentry tribe-events-event tribe-events-real-event cat_-2*/
+			.tribe_events {
+				position: relative;
+
+				& > a { display: block; font-size: 0.9em; white-space: nowrap; overflow: hidden; }
+				& > .tribe-events-tooltip {
+					width: 320px;
+				   	height: 160px; 
+					position: absolute;
+					left: -35%; bottom: 15px;
+					padding: 1em 1.3em; 
+					background: #F6F6F6;
+					/*border: 1px solid #CCC;*/
+					border-radius: 8px;
+
+					@include box-shadow(#666 0 0 10px);
+					
+					.tribe-events-event-date { display: block; border-bottom: 1px dashed #CCC; padding-bottom: 0.5em; margin-bottom: 0.5em;  }
+					.tribe-events-event-body { line-height: 1.2em; }
+				}
+			}
+
+			&.tribe-events-present {
+				background: rgba(255, 255, 255, 0.8);; 
+			}
+
+			.tribe-events-event { }
+			
+			.tribe-events-tooltip { }
+			.tribe-events-arrow { }
+		}
+	}
+
+}
 

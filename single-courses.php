@@ -12,7 +12,7 @@
 	//		echo $meta["status"][0];
 		?>
 
-		<article class="page courses">
+		<article class="page columns">
 			<header>
 				<h1><?php the_title(); ?></h1>
 			</header>

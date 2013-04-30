@@ -39,6 +39,7 @@
 			elseif ($l[0]=='Courses')	{ echo '<h2>&nbsp;/ <a href="'.$l[1].'">Курсове</a></h2>';		}
 			elseif ($l[0]=='News')		{ echo '<h2>&nbsp;/ <a href="'.$l[1].'">Новини</a></h2>';		}
 			elseif ($l[0]=='Labber')	{ echo '<h2>&nbsp;/ <a href="'.$l[1].'">Лаб`ъри</a></h2>'; }
+			elseif ($l[0]=='Tribe_events')	{ echo '<h2>&nbsp;/ <a href="'.$l[1].'">Събития</a></h2>'; }
 			else
 			{
 				echo '<h2>&nbsp;/ <a href="'.$l[1].'">'.$l[0].'</a></h2>';
