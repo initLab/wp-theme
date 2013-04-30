@@ -16,6 +16,9 @@
 
 	<article class="panel" id="user">
 
+		<div class="avatar" style="float: right;">
+			<?php echo get_avatar( $curauth->ID, 120 ); ?>
+		</div>
 		<header>
 			<h2><?php echo $curauth->first_name.' '.$curauth->last_name; ?></h2>
 		</header>
