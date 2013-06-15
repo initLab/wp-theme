@@ -5,11 +5,7 @@
 	<meta name="viewport" content="width=device-width">
     <title><?php wp_title('&laquo;', true, 'right'); ?></title>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/app.css">
-	<!--[if lt IE 9]> <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie.css"> <![endif]-->
-	<!--[if lt IE 7]> <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie6.css"> <![endif]-->
-	<?php if ( is_singular() ): ?>
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-	<?php endif; ?>
+	<?php if ( is_singular() ): ?><link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"><?php endif; ?>
 	<!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <?php wp_head(); ?>
 </head>

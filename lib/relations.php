@@ -8,7 +8,7 @@ p2p_register_connection_type( array(
 
 p2p_register_connection_type( array(
     'name' => 'multiple_authors',
-    'from' => 'events',
+    'from' => 'tribe_events',
     'to' => 'user'
 ) );
 

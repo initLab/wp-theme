@@ -26,17 +26,6 @@
 
     add_filter( 'use_default_gallery_style', '__return_false' ); //Remove Gallery Inline Styling
 
-    //register_sidebar(
-        //array(
-            //'name' => 'Index',
-            //'description' => 'This widget area is on top of the content on the homepage',
-            //'before_widget' => '<section id="%1$s" class="%2$s">',
-            //'before_title'  => '<header><h2>',
-            //'after_title'   => '</h2></header><div class="cnt">',
-            //'after_widget'  => '</div></section>'
-        //)
-    //);
-
     register_sidebar(
         array(
             'name' => 'Homepage - Row 1',
@@ -121,9 +110,5 @@
 		return ' ...';
 	}
 	add_filter('excerpt_more', 'new_excerpt_more');
-
-
-
-	
 
 ?>

@@ -10,7 +10,6 @@
 		</div>
 	</div>
 
-	<script src="<?php bloginfo('template_url'); ?>/scripts/jquery.tweet.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/scripts/jflickrfeed.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/scripts/app.js"></script>
 	<script type="text/javascript">

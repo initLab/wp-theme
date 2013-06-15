@@ -143,6 +143,16 @@ footer#bottom {
 
 	&:first-child { border-top: 0; }
 
+	&#events { 
+		section { width: 100%; }
+
+		.upcoming-events {
+			ul { overflow: hidden; padding-left: 0;  }
+			ul li { display: block; width: 30%; float: left; list-style: none outside; padding-right: 20px; }
+			ul li .when small { display: block; }
+		}
+	}
+
 	&#site-sections {
 
 		#menu-hacking-coworking li { 

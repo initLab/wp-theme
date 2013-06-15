@@ -2,40 +2,6 @@
 
 	function createPostTypes()
 	{
-		register_post_type( 'events',
-			array(
-				'labels' => array(
-					'name' => __( 'Events' ),
-					'singular_name' => __( 'Events' ),
-					'add_new' => __( 'Add new Event' ),
-					'all_items' => __( 'All Events' ),
-					'add_new_item' => __( 'Add new Event' ),
-					'edit_item' => __( 'Edit Event' ),
-					'new_item' => __( 'New Event' ),
-					'view_item' => __( 'View Event' ),
-					'search_items' => __( 'Search Events' ),
-					'not_found' => __( 'No Events found' ),
-					'not_found_in_trash' => __( 'No Events found in Trash' ),
-					'menu_name' => __( 'Events' )
-				),
-				'menu_position' => 5,
-				'public' => true,
-				'publicly_queryable' => true,
-				'query_var' => 'events',
-				'has_archive' => true,
-				'rewrite' => array('slug' => 'events'),
-				'supports' => array(
-					'title',
-					'excerpt',
-					'editor',
-					'author',
-					'custom-fields',
-					'revisions',
-					'page-attributes'
-				)
-			)
-		);
-
 		register_post_type( 'news',
 			array(
 				'labels' => array(
@@ -136,30 +102,4 @@
 	}
 	add_action( 'init', 'createPostTypes' );
 
-
-	// Template selection
-	function customPostTypeRedirects()
-	{
-		global $wp;
-		global $wp_query;
-
-		$cpts = array( 'events', 'news', 'courses', 'posts', 'page', 'faq' );
-
-		foreach($cpts as $type)
-		{
-			if ($wp->query_vars["post_type"] == $type)
-			{
-				if (have_posts())
-				{
-					include(TEMPLATEPATH . '/'.$type.'-list.php');
-					die();
-				}
-				else
-				{
-					$wp_query->is_404 = true;
-				}
-			}
-		}
-	}
-	//add_action("template_redirect", 'customPostTypeRedirects');
 ?>

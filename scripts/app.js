@@ -38,26 +38,6 @@ jQuery(document).ready(function ($) {
 	
 	if( $('body').hasClass('home') ) loadGMaps();
 
-	/* Load Tweets on the homepage */
-	$("#tweets").tweet({
-		join_text: "",
-		avatar_size: 52,
-		count: 6,
-		query: "#initlab",
-		loading_text: "Loading tweets...",
-		template: '{user}{time}<span class="cleaner"></span>{avatar}{text}'
-	});
-
-	/* Load Tweets on the homepage */
-	//$("#gatekeeper").tweet({
-		//join_text: "",
-		//avatar_size: 52,
-		//count: 3,
-		//username: "@initlabkeeper",
-		//loading_text: "Loading tweets...",
-		//template: '{user}{time}<span class="cleaner"></span>{text}'
-	//});
-
 	$.getJSON('http://db.initlab.ludost.net/pd-krok.php', function(data) {
 
 		$presence = $('#presence');
@@ -98,5 +78,4 @@ jQuery(document).ready(function ($) {
 			'<a class="avatar" href="{{image_b}}"><img src="{{image_s}}" alt="{{title}}" /></a>' +
 		'</li>'
 	});
-
 });
