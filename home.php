@@ -23,15 +23,15 @@
 	<div class="row" id="events">
 		<?php dynamic_sidebar("Homepage - Row 3"); ?>
 	</div>
-	<?php /* ?>
 	<div class="row">
 		<section class="messages" id="tweets-wrapper">
 			<header>
 				<h3>init Lab в Twitter</h3>
 			</header>
-			<div id="tweets"></div>
+			<div id="tweets">
+				<ul></ul>
+			</div>
 		</section>
 	</div>
-	<?php */ ?>
 
 <?php get_footer(); ?>

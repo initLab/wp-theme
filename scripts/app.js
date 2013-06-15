@@ -78,4 +78,39 @@ jQuery(document).ready(function ($) {
 			'<a class="avatar" href="{{image_b}}"><img src="{{image_s}}" alt="{{title}}" /></a>' +
 		'</li>'
 	});
+
+	weekday = ["Неделя", "Понеделник", "Вторник", "Сряда", "Четвъртък", "Петък", "Събота"];
+	month = ["Януари", "Февруари",	"Март", "Април", "Май", "Юни", "Юли", "Август", "Септември", "Октомври", "Ноември", "Декември", ];
+
+	var twitter = new Codebird;
+	twitter.setConsumerKey('bEUj1eykWIngaZv2uXjUw', '1OtBrGY1vCLOZULo1uiHDAyBCEiu31GP1reSF71Kkko');
+	//twitter.setBearerToken('17506533-ODX0xmx2G3SWS9nLA1xygIetTA40kg23frxpw77VE');
+	
+	var $tweets = $('#tweets ul:eq(0)');
+	twitter.__call(
+		'search_tweets',
+		'q=#initlab',
+		function (reply) {
+			var results = reply.statuses.slice(0, 6);
+			$.each(results, function(){
+
+				var date = new Date(this.created_at);
+
+				$tweets.append(
+					'<li>' + 
+						'<span class="tweet_user"><a href="http://twitter.com/' + this.user.screen_name + '">@' + this.user.screen_name + '</a></span>' +
+						'<span class="tweet_time">' + ( date.getHours() < 10 ? '0' : '' ) + date.getHours() + ':' + ( date.getMinutes() == 0 ? '0' : '') + date.getMinutes() + ', ' + date.getDate() + ' ' + month[date.getMonth()] + ', ' + weekday[date.getDay()] + '</span>' +
+						'<span class="cleaner"></span>' +
+						'<span class="tweet_avatar"><img src="' + this.user.profile_image_url +  '"></span>' +
+						'<span class="tweet_text">' + this.text + '</span>' +
+						//'<span class="tweet_source">' + this.source + '</span>' +
+					'</li>'
+				);		
+			});
+
+		},
+		true // this parameter required
+	);
+
+
 });

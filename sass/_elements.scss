@@ -110,7 +110,6 @@ article.columns {
 		display: block; width: 33%; float: left; list-style-type: none !important; 
 		
 		.tweet_user { display: block; float: left; }
-		.tweet_user:before { content: '@'; }
 		.tweet_user:after { content: ', '; }
 		.tweet_time { display: block; float: left; padding-left: 5px; }
 		.tweet_avatar { display: block; float: left; margin: 9px 1em 0 0.1em; clear: left; }
