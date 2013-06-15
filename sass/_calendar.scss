@@ -72,7 +72,7 @@ table.tribe-events-calendar {
 				& > a { display: block; font-size: 0.9em; white-space: nowrap; overflow: hidden; }
 				& > .tribe-events-tooltip {
 					width: 320px;
-				   	height: 160px; 
+				   	height: auto; 
 					position: absolute;
 					left: -35%; bottom: 15px;
 					padding: 1em 1.3em; 
