@@ -27,7 +27,7 @@
 				}
 
 			?>
-			<form id="header-search" action="http://initlab/" method="get" role="search">
+			<form id="header-search" action="/" method="get" role="search">
 				<label class="ss-icon" for="header-s">Search</label>
 				<input id="header-s" type="text" name="s" value="" placeholder="Търсене" >
 				<input id="header-searchsubmit" type="submit" value="Търсене">
