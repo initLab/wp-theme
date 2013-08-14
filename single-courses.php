@@ -31,7 +31,7 @@
 				</section>
 				<section>
 					<header><h3>Програма</h3></header>
-					<?php echo nl2br( $meta["program"][0] ); ?>
+					<?php echo $meta["program"][0]; ?>
 				</section>
 			</div>
 		</article>
