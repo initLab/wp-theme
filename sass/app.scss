@@ -97,6 +97,8 @@ footer#bottom {
 // Layout whitespace - central control
 .row, article.page, .archive #main { padding: 2em 3em; }
 
+.single-post article.page { padding: 4em 10em; }
+
 #main { 
 	overflow: hidden; 
 	border-top: 2px solid $colorBorderMain;
