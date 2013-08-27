@@ -55,6 +55,9 @@ jQuery(document).ready(function ($) {
 				if ( this.twitter ) {
 					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="http://twitter.com/'+ this.twitter +'">@'+this.twitter+'</a></li>');
 				}
+				else if ( this.url ) {
+					$presence.find('ul').append('<li><strong><a href="'+ this.url +'">'+this.name+'</a></strong></li>');
+				}
 				else {
 					$presence.find('ul').append('<li><strong>'+this.name+'</strong></li>');
 				}
