@@ -6,13 +6,11 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 ?>	
 <?php get_header(); ?>
 
-	<article class="page">
+	<article class="page columns">
 		<header>
 			<h1><?php tribe_events_title(); ?></h1>
 		</header>
-		<div class="content">
-			<?php include(tribe_get_current_template()); ?>
-		</div>
+		<?php include(tribe_get_current_template()); ?>
 	</article>
 
 <?php get_footer(); ?>

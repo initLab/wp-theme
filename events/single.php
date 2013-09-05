@@ -1,11 +1,4 @@
 <?php
-/**
-* A single event.  This displays the event title, description, meta, and 
-* optionally, the Google map for the event.
-*
-* You can customize this view by putting a replacement file of the same name (single.php) in the events/ directory of your theme.
-*/
-
 // Don't load directly
 if ( !defined('ABSPATH') ) { die('-1'); }
 ?>
@@ -98,15 +91,17 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 <?php if( tribe_address_exists( get_the_ID() ) ) { echo tribe_get_embedded_map(); } ?>
 <?php endif; ?>
 
-<?php if( function_exists('tribe_get_single_ical_link') ): ?>
-   <a class="ical single" href="<?php echo tribe_get_single_ical_link(); ?>"><?php _e('iCal Import', 'tribe-events-calendar'); ?></a>
-<?php endif; ?>
 <?php if( function_exists('tribe_get_gcal_link') ): ?>
    <a href="<?php echo tribe_get_gcal_link(); ?>" class="gcal-add" title="<?php _e('Add to Google Calendar', 'tribe-events-calendar'); ?>"><?php _e('+ Google Calendar', 'tribe-events-calendar'); ?></a>
 <?php endif; ?>
 
+<?php /* ?>
+<?php if( function_exists('tribe_get_single_ical_link') ): ?>
+   <a class="ical single" href="<?php echo tribe_get_single_ical_link(); ?>"><?php _e('iCal Import', 'tribe-events-calendar'); ?></a>
+<?php endif; ?>
 <span class="back"><a href="<?php echo tribe_get_events_link(); ?>"><?php _e('&laquo; Back to Events', 'tribe-events-calendar'); ?></a></span>				
 
 <div class="navlink tribe-previous"><?php tribe_previous_event_link(); ?></div>
 <div class="navlink tribe-next"><?php tribe_next_event_link(); ?></div>
+<?php */ ?>
 

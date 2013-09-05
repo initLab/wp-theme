@@ -2,7 +2,7 @@
 $widthContainer: 980px;
 $widthMinContainer: 980px;
 
-$colorBgrdBody: #F1F1F1;
+$colorBgrdBody: #FFF;
 
 $colorLinkHover:  #369;
 $colorLinkNormal: #369;
@@ -37,7 +37,7 @@ a { @include hover-link; @include link-colors($colorLinkNormal, $colorLinkHover,
 .cleaner { display: block; clear: both; height: 0;  overflow: hidden; } 
 
 // Layout
-#container {
+#container { 
 	width: $widthContainer;
 	min-width: $widthMinContainer;
 	margin: 0 auto;
