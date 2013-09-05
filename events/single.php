@@ -86,14 +86,16 @@ if ( !defined('ABSPATH') ) { die('-1'); }
    	<?php if( function_exists('tribe_the_custom_fields') && tribe_get_custom_fields( get_the_ID() ) ): ?>
 	  	<?php tribe_the_custom_fields( get_the_ID() ); ?>
 	<?php endif; ?>
+
+	<?php if( function_exists('tribe_get_gcal_link') ): ?>
+	   <a href="<?php echo tribe_get_gcal_link(); ?>" class="gcal-add" title="<?php _e('Add to Google Calendar', 'tribe-events-calendar'); ?>"><?php _e('+ Google Calendar', 'tribe-events-calendar'); ?></a>
+	<?php endif; ?>
+
 </div>
 <?php if( tribe_embed_google_map( get_the_ID() ) ) : ?>
 <?php if( tribe_address_exists( get_the_ID() ) ) { echo tribe_get_embedded_map(); } ?>
 <?php endif; ?>
 
-<?php if( function_exists('tribe_get_gcal_link') ): ?>
-   <a href="<?php echo tribe_get_gcal_link(); ?>" class="gcal-add" title="<?php _e('Add to Google Calendar', 'tribe-events-calendar'); ?>"><?php _e('+ Google Calendar', 'tribe-events-calendar'); ?></a>
-<?php endif; ?>
 
 <?php /* ?>
 <?php if( function_exists('tribe_get_single_ical_link') ): ?>
