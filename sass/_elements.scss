@@ -108,7 +108,7 @@ article.columns {
 		padding: 2em 1.7em;
 	}
 
-	article.entry {
+	article.entry.news {
 		width: 50%; float: left; height: 260px; padding: 2em 4%; overflow: hidden; 
 		@include box-shadow( $colorBorderSecondary -2px 0 0 0, $colorBorderMain 2px 0 0 0 inset);
 		
