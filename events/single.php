@@ -71,14 +71,21 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 			<dd itemprop="telephone" class="event-meta event-meta-venue-phone"><?php echo tribe_get_phone(); ?></dd>
 		<?php endif; ?>
 		<?php if( tribe_address_exists( get_the_ID() ) ) : ?>
-		<dt class="event-label event-label-address">
-			<?php _e('Address:', 'tribe-events-calendar') ?><br />
-			<?php if( tribe_show_google_map_link( get_the_ID() ) ) : ?>
-				<a class="gmap" itemprop="maps" href="<?php echo tribe_get_map_link(); ?>" title="<?php _e('Click to view a Google Map', 'tribe-events-calendar'); ?>" target="_blank"><?php _e('Google Map', 'tribe-events-calendar' ); ?></a>
-			<?php endif; ?>
-		</dt>
+			<dt class="event-label event-label-address">
+				<?php _e('Address:', 'tribe-events-calendar') ?><br />
+				<?php if( tribe_show_google_map_link( get_the_ID() ) ) : ?>
+					<a class="gmap" itemprop="maps" href="<?php echo tribe_get_map_link(); ?>" title="<?php _e('Click to view a Google Map', 'tribe-events-calendar'); ?>" target="_blank"><?php _e('Google Map', 'tribe-events-calendar' ); ?></a>
+				<?php endif; ?>
+			</dt>
 			<dd class="event-meta event-meta-address">
 			<?php echo tribe_get_full_address( get_the_ID() ); ?>
+			</dd>
+		<?php endif; ?>
+		<?php if( function_exists('tribe_get_gcal_link') ): ?>
+			<dt></dt>
+			<dd>
+				<br /><br />
+				<a href="<?php echo tribe_get_gcal_link(); ?>" class="gcal-add" title="<?php _e('Add to Google Calendar', 'tribe-events-calendar'); ?>"><?php _e('+ Google Calendar', 'tribe-events-calendar'); ?></a>
 			</dd>
 		<?php endif; ?>
 	</dl>
@@ -87,9 +94,6 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 	  	<?php tribe_the_custom_fields( get_the_ID() ); ?>
 	<?php endif; ?>
 
-	<?php if( function_exists('tribe_get_gcal_link') ): ?>
-	   <a href="<?php echo tribe_get_gcal_link(); ?>" class="gcal-add" title="<?php _e('Add to Google Calendar', 'tribe-events-calendar'); ?>"><?php _e('+ Google Calendar', 'tribe-events-calendar'); ?></a>
-	<?php endif; ?>
 
 </div>
 <?php if( tribe_embed_google_map( get_the_ID() ) ) : ?>
