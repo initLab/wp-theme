@@ -9,8 +9,6 @@
 	}
 }
 
-
-
 article.entry {
 	padding: 0 0 2em 0; 
 
@@ -21,18 +19,18 @@ article.entry {
 		}
 
 		p.meta {
-			background: #E5E5E5; 
+			background: #F1F1F1; 
 			font-size: 0.9em;
 			line-height: 1em;
 			padding: 0.5em 0.8em; 
-			margin-top: -0.5em; 
-			margin-bottom: 0.5em; 
+			margin: -0.5em -0.8em 0.5em -0.8em; 
+
+			@include border-radius(4px);
+
 			&, a { color: #666; }
 			&:hover a { color: #000; } 
 		}
-	}
 
-	.content {
 	}
 
 	&:hover {
@@ -66,6 +64,17 @@ article.page {
 			border-bottom: 2px solid #FFF; 
 		}
 	}
+
+	.event-passed {
+		font-size: 1.4em;
+		padding-bottom: 1.5em;
+		text-align: center;
+		color: #66a400; 
+
+		@include text-shadow(#FFF 0 2px 0);
+		@include separator-border-bottom;
+	}
+	
 }
 
 article.columns {
@@ -82,14 +91,51 @@ article.columns {
 	}
 
 	.content {
-		width: 68%;
+		width: 64%;
 		float: left;
 	}
 
 	.sidebar {
-		width: 28%;
+		width: 32%;
 		float: left;
 		margin-left: 4%;
+	}
+}
+
+.post-type-archive {
+	
+	&.archive #main {
+		padding: 2em 1.7em;
+	}
+
+	article.entry {
+		width: 50%; float: left; height: 260px; padding: 2em 4%; overflow: hidden; 
+		@include box-shadow( $colorBorderSecondary -2px 0 0 0, $colorBorderMain 2px 0 0 0 inset);
+		
+		&:nth-child(2n-2) { 
+			padding-left: 4%; 
+			margin-right: 0; 
+
+			@include box-shadow( $colorBorderSecondary -2px 0 0 0, $colorBorderMain 2px 0 0 0 inset, $colorBorderMain 2px 0 0 0, $colorBorderSecondary -2px 0 0 0 inset);
+		} 
+
+		&:hover {
+			&, p.meta {
+				background: #F8F8F8; 
+			}
+		}
+	}
+}
+
+.events-single {
+	.sidebar {
+		margin-left: 2%; 
+		@include separator-border-left;
+
+		dl { padding: 1em 0 1em 2em; }
+		dt, dd { float: left; overflow: hidden; }
+		dt { width: 25%; }
+		dd { width: 75%; }
 	}
 }
 
@@ -157,6 +203,7 @@ article.columns {
 	width: 100%;
 	height: 200px; 
 	border: 2px solid #999;
+
 	@include box-shadow(#CCC 0 0 5px);
 	@include border-radius(8px);
 }

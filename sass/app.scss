@@ -2,7 +2,7 @@
 $widthContainer: 980px;
 $widthMinContainer: 980px;
 
-$colorBgrdBody: #FFF;
+$colorBgrdBody: #F1F1F1;
 
 $colorLinkHover:  #369;
 $colorLinkNormal: #369;
@@ -19,6 +19,7 @@ $colorBorderSecondary: #FFF;
 
 /* Custom imports */
 @import "nuveze/_nuveze";
+@import "_mixins";
 @import "_typography";
 @import "_navigation";
 @import "_elements";
@@ -31,7 +32,7 @@ $colorBorderSecondary: #FFF;
 * { margin: 0; padding: 0; }
 .debug { white-space: pre; padding: 2em; }
 
-body { background: $colorBgrdBody; }
+body { background: $colorBgrdBody url(../images/body_bgrd.png); }
 hr { display: none; }
 a { @include hover-link; @include link-colors($colorLinkNormal, $colorLinkHover, $colorLinkActive, $colorLinkVisited, $colorLinkFocus); }
 .cleaner { display: block; clear: both; height: 0;  overflow: hidden; } 
@@ -72,7 +73,6 @@ header#top {
 
 footer#bottom { 
 	overflow: hidden; 
-	border-top: 2px solid $colorBorderMain; 
 
 	section.mod {
 		width: 33.33%; float: left; overflow: hidden; 
@@ -102,6 +102,10 @@ footer#bottom {
 #main { 
 	overflow: hidden; 
 	border-top: 2px solid $colorBorderMain;
+
+	@include separator-border-bottom;
+
+	.home & { border-bottom: none; }
 }
 
 #copyright {

@@ -1,0 +1,9 @@
+@mixin separator-border-bottom {
+	border-bottom: 2px solid $colorBorderSecondary;
+	@include box-shadow($colorBorderMain 0px 2px 0px);
+}
+
+@mixin separator-border-left {
+	@include box-shadow( $colorBorderSecondary -3px 0 0 0, $colorBorderMain 3px 0 0 0 inset);
+}
+
