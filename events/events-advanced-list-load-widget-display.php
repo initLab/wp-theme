@@ -52,7 +52,7 @@ ob_end_clean();
 				if ( ( tribe_get_all_day( $post->ID ) != 'yes' && tribe_is_multiday( $post->ID ) ) || ( tribe_get_all_day( $post->ID ) == 'yes' && tribe_is_multiday( $post->ID ) ) ) { 
 					echo ' – '. tribe_get_end_date($post->ID);
 				} elseif ( tribe_get_all_day( $post->ID ) != 'yes' && !tribe_is_multiday( $post->ID ) ) {
-					echo ' – '. tribe_get_end_date($post->ID, false, 'g:i a');
+					echo ' – '. tribe_get_end_date($post->ID, false, 'G:i');
 				}
 			}
 
