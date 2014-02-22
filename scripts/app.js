@@ -38,7 +38,7 @@ jQuery(document).ready(function ($) {
 	
 	if( $('body').hasClass('home') ) loadGMaps();
 
-	$.getJSON('http://db.initlab.ludost.net/pd-krok.php', function(data) {
+	$.getJSON('https://cassie.initlab.org/db/pd-krok.php', function(data) {
 
 		$presence = $('#presence');
 		$presence.append('<ul />');
