@@ -47,13 +47,13 @@ jQuery(document).ready(function ($) {
 		$.each(data, function() {
 			if(this.id != '18' && this.id != '33' && this.id != '69' && this.id != '70' && this.id != '71'){
 				//if( this.twitter && this.url ){
-					//$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="http://twitter.com/'+ this.twitter +'">@'+ this.twitter +'</a>, <a href="'+ this.url +'">'+this.url+'</a></li>');
+					//$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="https://twitter.com/'+ this.twitter +'">@'+ this.twitter +'</a>, <a href="'+ this.url +'">'+this.url+'</a></li>');
 				//}
 				//else if( this.url) {
 					//$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="'+ this.url +'">'+this.url+'</a></li>');
 				//}
 				if ( this.twitter ) {
-					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="http://twitter.com/'+ this.twitter +'">@'+this.twitter+'</a></li>');
+					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="https://twitter.com/'+ this.twitter +'">@'+this.twitter+'</a></li>');
 				}
 				else if ( this.url ) {
 					$presence.find('ul').append('<li><strong><a href="'+ this.url +'">'+this.name+'</a></strong></li>');
@@ -101,10 +101,10 @@ jQuery(document).ready(function ($) {
 
 				$tweets.append(
 					'<li>' + 
-						'<span class="tweet_user"><a href="http://twitter.com/' + this.user.screen_name + '">@' + this.user.screen_name + '</a></span>' +
+						'<span class="tweet_user"><a href="https://twitter.com/' + this.user.screen_name + '">@' + this.user.screen_name + '</a></span>' +
 						'<span class="tweet_time">' + ( date.getHours() < 10 ? '0' : '' ) + date.getHours() + ':' + ( date.getMinutes() == 0 ? '0' : '') + date.getMinutes() + ', ' + date.getDate() + ' ' + month[date.getMonth()] + ', ' + weekday[date.getDay()] + '</span>' +
 						'<span class="cleaner"></span>' +
-						'<span class="tweet_avatar"><img src="' + this.user.profile_image_url +  '"></span>' +
+						'<span class="tweet_avatar"><img src="' + this.user.profile_image_url.replace("http:", "https:") +  '"></span>' +
 						'<span class="tweet_text">' + this.text + '</span>' +
 						//'<span class="tweet_source">' + this.source + '</span>' +
 					'</li>'
