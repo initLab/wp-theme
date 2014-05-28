@@ -35,34 +35,26 @@ function loadGMaps() {
 }
 
 jQuery(document).ready(function ($) {
-	
+
 	if( $('body').hasClass('home') ) loadGMaps();
 
-	$.getJSON('https://cassie.initlab.org/db/pd-krok.php', function(data) {
+	$.getJSON('https://fauna.initlab.org/users/present.json', function(data) {
 
 		$presence = $('#presence');
 		$presence.append('<ul />');
 
 		var empty = true;
 		$.each(data, function() {
-			if(this.id != '18' && this.id != '33' && this.id != '69' && this.id != '70' && this.id != '71'){
-				//if( this.twitter && this.url ){
-					//$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="https://twitter.com/'+ this.twitter +'">@'+ this.twitter +'</a>, <a href="'+ this.url +'">'+this.url+'</a></li>');
-				//}
-				//else if( this.url) {
-					//$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="'+ this.url +'">'+this.url+'</a></li>');
-				//}
-				if ( this.twitter ) {
-					$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="https://twitter.com/'+ this.twitter +'">@'+this.twitter+'</a></li>');
-				}
-				else if ( this.url ) {
-					$presence.find('ul').append('<li><strong><a href="'+ this.url +'">'+this.name+'</a></strong></li>');
-				}
-				else {
-					$presence.find('ul').append('<li><strong>'+this.name+'</strong></li>');
-				}
-				empty = false;
+			if ( this.twitter ) {
+				$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="https://twitter.com/'+ this.twitter +'">@'+this.twitter+'</a></li>');
 			}
+			else if ( this.url ) {
+				$presence.find('ul').append('<li><strong><a href="'+ this.url +'">'+this.name+'</a></strong></li>');
+			}
+			else {
+				$presence.find('ul').append('<li><strong>'+this.name+'</strong></li>');
+			}
+			empty = false;
 		});
 
 		if (empty) {
@@ -88,7 +80,7 @@ jQuery(document).ready(function ($) {
 	var twitter = new Codebird;
 	twitter.setConsumerKey('bEUj1eykWIngaZv2uXjUw', '1OtBrGY1vCLOZULo1uiHDAyBCEiu31GP1reSF71Kkko');
 	//twitter.setBearerToken('17506533-ODX0xmx2G3SWS9nLA1xygIetTA40kg23frxpw77VE');
-	
+
 	var $tweets = $('#tweets ul:eq(0)');
 	twitter.__call(
 		'search_tweets',
@@ -100,7 +92,7 @@ jQuery(document).ready(function ($) {
 				var date = new Date(this.created_at);
 
 				$tweets.append(
-					'<li>' + 
+					'<li>' +
 						'<span class="tweet_user"><a href="https://twitter.com/' + this.user.screen_name + '">@' + this.user.screen_name + '</a></span>' +
 						'<span class="tweet_time">' + ( date.getHours() < 10 ? '0' : '' ) + date.getHours() + ':' + ( date.getMinutes() == 0 ? '0' : '') + date.getMinutes() + ', ' + date.getDate() + ' ' + month[date.getMonth()] + ', ' + weekday[date.getDay()] + '</span>' +
 						'<span class="cleaner"></span>' +
@@ -108,7 +100,7 @@ jQuery(document).ready(function ($) {
 						'<span class="tweet_text">' + this.text + '</span>' +
 						//'<span class="tweet_source">' + this.source + '</span>' +
 					'</li>'
-				);		
+				);
 			});
 
 		},
