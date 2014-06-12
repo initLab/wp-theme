@@ -176,7 +176,11 @@ article.columns {
 
 	#presence {
 		ul { overflow: hidden; }
-		li { width: 20%; padding-bottom: 1.5em; }
+		li {
+			width: 25%;
+			padding-bottom: 1.5em;
+			.info { display: block; padding: 0px 1em 0px 4.2em; margin: 5px; }
+		}
 	}
 }
 

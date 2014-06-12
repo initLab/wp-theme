@@ -41,19 +41,23 @@ jQuery(document).ready(function ($) {
 	$.getJSON('https://fauna.initlab.org/users/present.json', function(data) {
 
 		$presence = $('#presence');
-		$presence.append('<ul />');
+		$presence.html('<ul />');
+		$presenceList = $presence.find('ul');
 
 		var empty = true;
 		$.each(data, function() {
-			if ( this.twitter ) {
-				$presence.find('ul').append('<li><strong>'+this.name+'</strong> <br /> <a href="https://twitter.com/'+ this.twitter +'">@'+this.twitter+'</a></li>');
+			$person = $('<li></li>');
+			$person.append('<span class="avatar"><img src="//www.gravatar.com/avatar/'+ this.email_md5 +'?s=50&d=retro" /></span>');
+			$info = $('<span class="info"></span>');
+			if (this.url) {
+				$info.append('<strong><a href="'+ this.url +'">'+this.name+'</a></strong>');
+			} else {
+				$info.append('<strong>'+this.name+'</strong>');
 			}
-			else if ( this.url ) {
-				$presence.find('ul').append('<li><strong><a href="'+ this.url +'">'+this.name+'</a></strong></li>');
+			if (this.twitter) {
+				$info.append('<br><a href="https://twitter.com/'+ this.twitter +'">@'+this.twitter+'</a>');
 			}
-			else {
-				$presence.find('ul').append('<li><strong>'+this.name+'</strong></li>');
-			}
+			$presenceList.append($person.append($info));
 			empty = false;
 		});
 
